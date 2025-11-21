@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://dojtdweambavs"]
+
+[ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://addons/godot-devkit/UI/ui_elements/volume_slider/h_volume_slider.gd" id="1_58dlo"]
+
+[node name="MenuOptions" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+tab_alignment = 1
+current_tab = 0
+
+[node name="Gameplay" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="Gameplay"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 24
+columns = 2
+
+[node name="Label" type="Label" parent="Gameplay/GridContainer"]
+layout_mode = 2
+text = "Screen Shake"
+
+[node name="ScreenShake" type="HSlider" parent="Gameplay/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Label2" type="Label" parent="Gameplay/GridContainer"]
+layout_mode = 2
+text = "Language"
+
+[node name="Language" type="OptionButton" parent="Gameplay/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "en"
+popup/item_0/id = 0
+
+[node name="Audio" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="Audio"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 24
+columns = 2
+
+[node name="Label" type="Label" parent="Audio/GridContainer"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 2
+
+[node name="HVolumeSlider" type="HSlider" parent="Audio/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.1
+script = ExtResource("1_58dlo")
+bus_id = 0
+save_data_sync_property = "volume_master"
+bus = "Master"
+save_data_sync_property = "volume_master"
+metadata/_custom_type_script = "uid://61q2h71kluj0"
+
+[node name="Label2" type="Label" parent="Audio/GridContainer"]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 2
+
+[node name="HVolumeSlider2" type="HSlider" parent="Audio/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
+script = ExtResource("1_58dlo")
+bus_id = 1
+save_data_sync_property = "volume_bgm"
+bus = "BGM"
+save_data_sync_property = "volume_bgm"
+metadata/_custom_type_script = "uid://61q2h71kluj0"
+
+[node name="Label3" type="Label" parent="Audio/GridContainer"]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 2
+
+[node name="HVolumeSlider3" type="HSlider" parent="Audio/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
+script = ExtResource("1_58dlo")
+bus_id = 2
+save_data_sync_property = "volume_sfx"
+bus = "SFX"
+save_data_sync_property = "volume_sfx"
+metadata/_custom_type_script = "uid://61q2h71kluj0"
+
+[node name="Video" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+metadata/_tab_index = 2
+
+[node name="GridContainer" type="GridContainer" parent="Video"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 24
+columns = 2
+
+[node name="Label" type="Label" parent="Video/GridContainer"]
+layout_mode = 2
+text = "fullscreen"
+
+[node name="FullScreen" type="CheckBox" parent="Video/GridContainer"]
+layout_mode = 2

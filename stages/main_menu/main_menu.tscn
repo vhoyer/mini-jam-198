@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyj3mskldd4wg"]
+
+[ext_resource type="Script" uid="uid://dxrc4vpfkepfc" path="res://stages/main_menu/label.gd" id="1_owbi8"]
+[ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/StageManager/stage_changer_base_button.gd" id="2_wxx16"]
+[ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_show.gd" id="3_wyd67"]
+[ext_resource type="PackedScene" uid="uid://dojtdweambavs" path="res://entities/menu_options/menu_options.tscn" id="4_7wn7o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wyd67"]
+font_size = 32
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Template Godot"
+label_settings = SubResource("LabelSettings_wyd67")
+horizontal_alignment = 1
+script = ExtResource("1_owbi8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ButtonStart" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+script = ExtResource("2_wxx16")
+scene_file = "uid://da3gtwdmmm0dn"
+
+[node name="ButtonPanelShow" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("panel")]
+layout_mode = 2
+text = "Options"
+script = ExtResource("3_wyd67")
+panel = NodePath("../../MenuOptions")
+toggle_behavior = true
+
+[node name="ButtonCredits" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("2_wxx16")
+scene_file = "uid://d3b4ogssrd1ut"
+
+[node name="MenuOptions" parent="CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_7wn7o")]
+visible = false
+layout_mode = 2
