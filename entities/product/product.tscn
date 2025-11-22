@@ -15,7 +15,6 @@ size = Vector3(0.55, 0.55, 0.55)
 [node name="Product" type="RigidBody3D"]
 script = ExtResource("1_eg8l8")
 price = 0
-rarity = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
