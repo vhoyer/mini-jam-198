@@ -18,7 +18,7 @@ _rarity3 = ExtResource("4_i7akn")
 
 [node name="BoxModelPlacement" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.01, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.275, 0)
 
 [node name="Label" type="Label3D" parent="."]
 unique_name_in_owner = true
