@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmqv488a460ao"]
+[gd_scene load_steps=4 format=3 uid="uid://dmqv488a460ao"]
 
 [ext_resource type="Script" uid="uid://c0lpdpm0fc2l" path="res://entities/product/product.gd" id="1_eg8l8"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn0ls"]
-albedo_color = Color(0.67058825, 0.4627451, 0.3372549, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_gn0ls"]
-material = SubResource("StandardMaterial3D_gn0ls")
-size = Vector3(0.55, 0.55, 0.55)
+[ext_resource type="PackedScene" uid="uid://covbcvofw1nip" path="res://entities/product/models/default_box.glb" id="2_sf8nj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gn0ls"]
 size = Vector3(0.55, 0.55, 0.55)
@@ -16,9 +10,10 @@ size = Vector3(0.55, 0.55, 0.55)
 script = ExtResource("1_eg8l8")
 price = 0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-mesh = SubResource("BoxMesh_gn0ls")
+[node name="default_box" parent="." instance=ExtResource("2_sf8nj")]
+
+[node name="Box Default" parent="default_box" index="0"]
+transform = Transform3D(-1.2020632e-08, 0, 0.275, 0, 0.275, 0, -0.275, 0, -1.2020632e-08, 0, 0.25, 0)
 
 [node name="Label" type="Label3D" parent="."]
 unique_name_in_owner = true
@@ -40,3 +35,5 @@ text = "$0"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_gn0ls")
+
+[editable path="default_box"]
