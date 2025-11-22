@@ -11,7 +11,7 @@ size = Vector3(0.55, 0.55, 0.55)
 [node name="Product" type="RigidBody3D"]
 script = ExtResource("1_eg8l8")
 price = 0
-rarity = 135
+rarity = 200
 _rarity1 = ExtResource("2_sf8nj")
 _rarity2 = ExtResource("3_sim54")
 _rarity3 = ExtResource("4_i7akn")

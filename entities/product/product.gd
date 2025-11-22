@@ -16,8 +16,8 @@ var price: int = 10:
 		price = max(value, 0)
 		_model_updated.emit()
 
-@export
-var rarity: int = 0:
+@export_range(0, 200)
+var rarity: int = 200:
 	set(value):
 		rarity = value
 		_model_updated.emit()

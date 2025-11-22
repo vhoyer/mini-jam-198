@@ -15,10 +15,10 @@ script = ExtResource("1_eufgd")
 product_scene = ExtResource("2_tdape")
 
 [node name="ModelPosition" type="Marker3D" parent="."]
-transform = Transform3D(-1.0927846e-09, 0, -0.5900021, 0, 1, 0, 0.025, 0, -2.5789815e-08, 0, 1, 0.025)
+transform = Transform3D(-1.0927846e-09, 0, -0.5900021, 0, 1, 0, 0.025, 0, -2.5789815e-08, 0, 0.967, 0.225)
 
 [node name="shelf" parent="ModelPosition" instance=ExtResource("3_xkcyi")]
-transform = Transform3D(39.999996, 0, 0, 0, 1, 0, 0, 0, 1.694909, 14.042119, -1, 4.430653)
+transform = Transform3D(39.999996, 0, 0, 0, 1, 0, 0, 0, 1.694909, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5144501, 0.3)
@@ -30,6 +30,6 @@ shape = SubResource("BoxShape3D_xkcyi")
 
 [node name="ProductPlace" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0743737, 0.36851132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0743737, 0.5602363)
 
 [editable path="ModelPosition/shelf"]
