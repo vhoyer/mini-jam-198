@@ -1,3 +1,62 @@
-[gd_scene format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=10 format=3 uid="uid://bikle0m56vgy0"]
+
+[ext_resource type="PackedScene" uid="uid://dqvxh5cs8dxxc" path="res://entities/player/player.tscn" id="1_erxa5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erxa5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ljefa"]
+sky_material = SubResource("ProceduralSkyMaterial_erxa5")
+
+[sub_resource type="Environment" id="Environment_5kwao"]
+background_mode = 2
+sky = SubResource("Sky_ljefa")
+tonemap_mode = 2
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bxatn"]
+
+[sub_resource type="Gradient" id="Gradient_erxa5"]
+offsets = PackedFloat32Array(0.9571865, 0.98165137)
+colors = PackedColorArray(1, 1, 1, 1, 0.12, 0.12, 0.12, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ljefa"]
+gradient = SubResource("Gradient_erxa5")
+width = 300
+height = 300
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljefa"]
+albedo_texture = SubResource("GradientTexture2D_ljefa")
+metallic = 1.0
+metallic_specular = 0.15
+metallic_texture = SubResource("GradientTexture2D_ljefa")
+metallic_texture_channel = 4
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5kwao"]
+material = SubResource("StandardMaterial3D_ljefa")
+size = Vector2(1000, 1000)
 
 [node name="Prototype" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5kwao")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_bxatn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_5kwao")
+
+[node name="Player" parent="." instance=ExtResource("1_erxa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06250954, 0.7214838, -0.66410923)

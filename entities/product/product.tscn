@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmqv488a460ao"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gn0ls"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Box" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("BoxMesh_gn0ls")
+
+[node name="Label" type="Label3D" parent="."]
+transform = Transform3D(-0.9195062, -0.39307547, -8.742278e-08, -0.39307547, 0.9195062, 0, 8.038578e-08, 3.4363747e-08, -1, 0, 0.265, -0.251)
+pixel_size = 0.0015
+text = "Product incredible"
+
+[node name="Price" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7651268, -0.008624017)
+pixel_size = 0.002
+billboard = 1
+text = "$1000"
