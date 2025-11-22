@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqvxh5cs8dxxc"]
+[gd_scene load_steps=10 format=3 uid="uid://dqvxh5cs8dxxc"]
 
 [ext_resource type="Script" uid="uid://co5fbfk4p7661" path="res://entities/player/player.gd" id="1_symyc"]
 
@@ -29,6 +29,11 @@ size = Vector3(1, 0.9, 1.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_symyc"]
 size = Vector3(1, 0.9, 1.2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_symyc"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="VehicleBody3D"]
 mass = 100.0
@@ -160,3 +165,13 @@ current = true
 [node name="BaseCameraLookAt" type="Marker3D" parent="CameraPivot"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9999998)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Velocity" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 33.0
+label_settings = SubResource("LabelSettings_symyc")
