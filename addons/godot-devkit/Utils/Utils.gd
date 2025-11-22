@@ -77,7 +77,7 @@ static func camera_2d_shake(context: Node) -> void:
 	var camera:= context.get_viewport().get_camera_2d()
 	var original_offset:= camera.offset
 
-	var max_shake:= 20 * SettingsManager.config.screen_shake
+	var max_shake:= 20 * SaveManager.config.screen_shake
 	var rumble_strength:= SaveManager.config.controller_rumble
 
 	var tween:= context.create_tween()
@@ -102,5 +102,3 @@ static func camera_2d_shake(context: Node) -> void:
 				original_offset + Vector2.from_angle(TAU * randf()) * max_shake * mod,
 				SHAKE_EACH_DURATION)
 	tween.tween_property(camera, 'offset', original_offset, 0.1)
-
-
