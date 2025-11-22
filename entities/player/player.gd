@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
 
-const MAX_STEER = 1
+const MAX_STEER = 0.8
 const ENGINE_POWER = 100
 
 
@@ -14,8 +14,11 @@ var camera_pivot: Node3D = %CameraPivot
 @onready
 var camera_main: Camera3D = %CameraMain
 
+@onready
+var camera_base_look_at: Marker3D = %BaseCameraLookAt
 
-var look_at: Vector3
+
+var look_at_pos: Vector3
 
 
 func _ready() -> void:
@@ -23,7 +26,7 @@ func _ready() -> void:
 
 	## camera stuff
 	camera_pivot.top_level = true
-	look_at = self.global_position
+	look_at_pos = camera_base_look_at.global_position
 
 
 func _physics_process(delta: float) -> void:
@@ -32,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	## camera stuff
 	camera_pivot.global_position = camera_pivot.global_position.lerp(self.global_position, delta * 20.0)
-	#camera_pivot.transform = camera_pivot.transform.interpolate_with(self.transform, delta * 5.0)
+	camera_pivot.transform = camera_pivot.transform.interpolate_with(self.transform, delta * 2.5)
 
-	# look_at = look_at.lerp(self.global_position + self.linear_velocity, delta * 5.0)
-	# camera_main.look_at(look_at)
+	look_at_pos = look_at_pos.lerp(camera_base_look_at.global_position + self.linear_velocity, delta * 5.0)
+	camera_main.look_at(look_at_pos)

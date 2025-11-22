@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=11 format=3 uid="uid://bikle0m56vgy0"]
 
 [ext_resource type="PackedScene" uid="uid://dqvxh5cs8dxxc" path="res://entities/player/player.tscn" id="1_erxa5"]
+[ext_resource type="PackedScene" uid="uid://ty7iebivym5q" path="res://entities/shelf/shelf.tscn" id="2_ljefa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erxa5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -39,7 +40,7 @@ uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5kwao"]
 material = SubResource("StandardMaterial3D_ljefa")
-size = Vector2(1000, 1000)
+size = Vector2(66, 66)
 
 [node name="Prototype" type="Node"]
 
@@ -51,6 +52,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, -3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_bxatn")
@@ -59,4 +61,2888 @@ shape = SubResource("WorldBoundaryShape3D_bxatn")
 mesh = SubResource("PlaneMesh_5kwao")
 
 [node name="Player" parent="." instance=ExtResource("1_erxa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06250954, 0.7214838, -0.66410923)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062492386, 0.008121848, -0.66435146)
+
+[node name="Corridor" type="Node3D" parent="."]
+
+[node name="CorridorSection" type="Node3D" parent="Corridor"]
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection2" type="Node3D" parent="Corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection3" type="Node3D" parent="Corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection4" type="Node3D" parent="Corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection5" type="Node3D" parent="Corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="Corridor2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="CorridorSection" type="Node3D" parent="Corridor2"]
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor2/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor2/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection2" type="Node3D" parent="Corridor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor2/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor2/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection3" type="Node3D" parent="Corridor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor2/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor2/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection4" type="Node3D" parent="Corridor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor2/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor2/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection5" type="Node3D" parent="Corridor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor2/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor2/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor2/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor2/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="Corridor3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="CorridorSection" type="Node3D" parent="Corridor3"]
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor3/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor3/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection2" type="Node3D" parent="Corridor3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor3/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor3/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection3" type="Node3D" parent="Corridor3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor3/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor3/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection4" type="Node3D" parent="Corridor3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor3/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor3/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection5" type="Node3D" parent="Corridor3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor3/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor3/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor3/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor3/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="Corridor4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="CorridorSection" type="Node3D" parent="Corridor4"]
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor4/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor4/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection2" type="Node3D" parent="Corridor4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor4/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor4/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection3" type="Node3D" parent="Corridor4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor4/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor4/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection4" type="Node3D" parent="Corridor4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor4/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor4/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection5" type="Node3D" parent="Corridor4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor4/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor4/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor4/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor4/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="Corridor5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="CorridorSection" type="Node3D" parent="Corridor5"]
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor5/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor5/CorridorSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection2" type="Node3D" parent="Corridor5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor5/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor5/CorridorSection2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection2/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection2/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection3" type="Node3D" parent="Corridor5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor5/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor5/CorridorSection3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection3/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection3/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection4" type="Node3D" parent="Corridor5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor5/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor5/CorridorSection4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection4/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection4/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="CorridorSection5" type="Node3D" parent="Corridor5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="ShelfUnit" type="Node3D" parent="Corridor5/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfUnit2" type="Node3D" parent="Corridor5/CorridorSection5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="ShelfDoubleSide" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit2"]
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide2" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide2" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide3" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide3" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide4" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide4" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide5" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide5" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
+
+[node name="ShelfDoubleSide6" type="Node3D" parent="Corridor5/CorridorSection5/ShelfUnit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Shelf" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Shelf2" parent="Corridor5/CorridorSection5/ShelfUnit2/ShelfDoubleSide6" instance=ExtResource("2_ljefa")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 0, 0, 0)
