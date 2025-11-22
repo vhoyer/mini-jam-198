@@ -1,39 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://ty7iebivym5q"]
+[gd_scene load_steps=6 format=3 uid="uid://ty7iebivym5q"]
 
 [ext_resource type="Script" uid="uid://b0f3t24y8i37w" path="res://entities/shelf/shelf.gd" id="1_eufgd"]
 [ext_resource type="PackedScene" uid="uid://dmqv488a460ao" path="res://entities/product/product.tscn" id="2_tdape"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c80nb"]
-albedo_color = Color(0.35, 0.1295, 0.1295, 1)
-
-[sub_resource type="PrismMesh" id="PrismMesh_c80nb"]
-left_to_right = 1.0
-size = Vector3(0.3, 0.6, 1.18)
-
-[sub_resource type="BoxMesh" id="BoxMesh_eufgd"]
-size = Vector3(1.18, 2, 0.03)
+[ext_resource type="PackedScene" uid="uid://g060fgm2sv78" path="res://entities/shelf/models/shelf.glb" id="3_xkcyi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c80nb"]
 size = Vector3(1.18, 1.0289001, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkcyi"]
+size = Vector3(1.18, 2.002243, 0.047070324)
 
 [node name="Shelf" type="StaticBody3D"]
 script = ExtResource("1_eufgd")
 product_scene = ExtResource("2_tdape")
 
-[node name="MeshCounter" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 1, -4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 1.9106855e-15, 0, 0.85, 0.3)
-material_override = SubResource("StandardMaterial3D_c80nb")
-mesh = SubResource("PrismMesh_c80nb")
+[node name="ModelPosition" type="Marker3D" parent="."]
+transform = Transform3D(-1.0927846e-09, 0, -0.5900021, 0, 1, 0, 0.025, 0, -2.5789815e-08, 0, 1, 0.025)
 
-[node name="MeshBack" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.015)
-material_override = SubResource("StandardMaterial3D_c80nb")
-mesh = SubResource("BoxMesh_eufgd")
+[node name="shelf" parent="ModelPosition" instance=ExtResource("3_xkcyi")]
+transform = Transform3D(39.999996, 0, 0, 0, 1, 0, 0, 0, 1.694909, 14.042119, -1, 4.430653)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5144501, 0.3)
 shape = SubResource("BoxShape3D_c80nb")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0011215, 0.023535162)
+shape = SubResource("BoxShape3D_xkcyi")
+
 [node name="ProductPlace" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0743737, 0.36851132)
+
+[editable path="ModelPosition/shelf"]
