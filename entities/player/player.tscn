@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqvxh5cs8dxxc"]
+[gd_scene load_steps=12 format=3 uid="uid://dqvxh5cs8dxxc"]
 
 [ext_resource type="Script" uid="uid://co5fbfk4p7661" path="res://entities/player/player.gd" id="1_symyc"]
 
@@ -20,14 +20,22 @@ top_radius = 0.05
 bottom_radius = 0.05
 height = 0.07
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abrql"]
+albedo_color = Color(0.58735806, 0.48626548, 0.36695486, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sfv1e"]
+material = SubResource("StandardMaterial3D_abrql")
 radius = 0.3
 height = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_symyc"]
 size = Vector3(1, 0.9, 1.2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bls4j"]
+albedo_color = Color(0.24939999, 0.29, 0.2832333, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_symyc"]
+material = SubResource("StandardMaterial3D_bls4j")
 size = Vector3(1, 0.9, 1.2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_symyc"]

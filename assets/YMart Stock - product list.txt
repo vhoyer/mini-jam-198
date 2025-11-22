@@ -1,0 +1,495 @@
+section	name	price	rarity
+House	Student Piano	900	22
+House	Phone	600	75
+House	TV	1200	68
+House	Grand Piano	8500	5
+House	PC	1500	60
+House	Lamp	40	92
+House	Bed Frame	300	70
+House	Bed	500	73
+House	Couch	900	58
+House	Shelf	120	85
+House	Kitchen Table	450	64
+House	Kitchen Sink	380	55
+House	Toilet	250	72
+House	Laptop	1100	67
+House	Desk	220	81
+House	Refrigerator	1800	48
+House	Webcam	90	88
+House	AC Unit	2000	40
+House	Boombox	150	52
+House	VR Rig	2500	20
+House	Drawer	160	83
+House	Wardrobe	650	50
+House	Pan Set	80	91
+House	Cooktop	900	45
+House	Oven	1100	38
+House	Monitor	300	76
+House	Sofa	950	57
+House	Mat	25	99
+House	Ladder	70	89
+House	Plant Pot	18	97
+House	Kitchen Counter	1200	44
+House	Massage Chair	2600	12
+House	Ofuro	3500	9
+House	Japanese Bidet	700	34
+House	Mirror	90	93
+House	Ball Pit	250	28
+House	Trampulin	400	30
+House	Leg Press Machine	1400	17
+House	Pinball Machine	5000	7
+House	TV Rack	140	82
+House	Minibar	350	63
+House	Dressing Table	280	74
+House	TTRPG Table	600	29
+House	Board Game Table	850	26
+House	Bean Bag	120	87
+House	Chandelier	750	15
+House	Garden Table	200	66
+House	Garden Chair	60	94
+House	Jacuzzi	4800	6
+House	Christmas Tree	130	79
+House	Self-image Statue	3000	8
+House	Astronomy Telescope	900	23
+House	Stretch	30	96
+House	Decorative Jar	45	95
+House	Another Famous Book Collection	500	19
+House	Famous Book Collection	650	14
+House	DSLR Camera	900	33
+House	Mirrorless Camera	1100	31
+House	Kitchen Knife	25	90
+House	Sharp Knife	40	86
+House	Knife Sharpner	18	98
+House	Pickaxe	55	84
+House	Sword	180	49
+House	Linder Surprise Egg	600	6
+House	Hose	30	92
+House	Hoe	30	92
+House	Personal Mime	1500	11
+House	Personal Jester	1400	13
+House	Personal Chef	3000	4
+House	Personal Clown	1200	16
+House	Medieval Beer Mug	60	78
+House	Antenna	90	88
+House	MRI Machine	250000	1
+House	Personal Doctor	8000	3
+House	Blood Boy	2000	10
+House	3D Printer	700	47
+House	Planner	15	99
+House	Deodorant	7	100
+House	Tool Box	80	89
+House	Living Room Table	350	65
+House	Ceramic Kiln	2700	9
+House	Pizza Oven	1800	21
+House	Reclining Chair	500	59
+Travel	Roof Cargo Box	180	62
+Travel	Portable Tire Inflator	65	78
+Travel	Car Air Mattress	95	73
+Travel	Anti-Glare Sun Visor	20	90
+Travel	Portable Jump Starter	120	55
+Travel	Backseat Organizer	25	96
+Travel	Car Fridge Mini	140	48
+Travel	Dash Camera Pro	110	52
+Travel	GPS Navigator Lite	80	68
+Travel	Seat Cooler Pad	45	87
+Travel	Steering Wheel Lock	35	92
+Travel	Rain-Repellent Spray	10	99
+Travel	Emergency Road Kit	50	83
+Travel	Fuel Canister	22	95
+Travel	Car Vacuum Turbo	40	88
+Travel	Bluetooth FM Transmitter	18	98
+Travel	Phone Holder Magnetic	12	100
+Travel	Portable Booster Battery	130	44
+Travel	Trunk Storage Net	15	97
+Travel	Car Tent Awning	160	39
+Travel	Toyata Corlla	16000	41
+Travel	Hondi Civuc	15500	47
+Travel	Frod Musfing	28000	25
+Travel	Nissin Almera	13000	53
+Travel	Chevroler Sparc	11000	58
+Travel	Volkswaken Golfe	19000	36
+Travel	Kio Sorento	22000	32
+Travel	Suzuky Jimmu	17000	49
+Travel	Merceds C-Classo	33000	21
+Travel	BMW 3-Serries	35000	19
+Travel	Audi A5e	37000	17
+Travel	Trip to Paris (7 days)	2200	26
+Travel	Trip to Tokyo (12 days)	3100	18
+Travel	Trip to New York (5 days)	1800	40
+Travel	Trip to Rio de Janeiro (4 days)	900	72
+Travel	Trip to Rome (6 days)	2000	33
+Travel	Trip to London (7 days)	2300	29
+Travel	Trip to Cancun (5 days)	1500	64
+Travel	Trip to Buenos Aires (4 days)	800	85
+Travel	Trip to Sydney (10 days)	3500	14
+Travel	Trip to Dubai (8 days)	2800	22
+Travel	Suitcase Large	120	94
+Travel	Travel Backpack	60	89
+Travel	Compression Packing Cubes	30	92
+Travel	Travel Adapter	15	99
+Travel	Noise-Cancelling Headphones	200	50
+Travel	Passport Holder	10	98
+Travel	Secure Money Belt	22	96
+Travel	Travel Pillow	18	95
+Travel	Foldable Water Bottle	12	97
+Travel	Hiking Boots	140	70
+Travel	Camping Tent	180	63
+Travel	Sleeping Bag	75	82
+Travel	Travel Hammock	45	88
+Travel	Folding Chair	25	93
+Travel	Portable Stove	55	76
+Travel	Action Camera	250	57
+Travel	Drone Mini	350	43
+Travel	Binoculars	60	84
+Travel	Travel Tripod	35	91
+Travel	Luggage Scale	12	100
+Travel	Anti-Theft Backpack	75	80
+Travel	Waterproof Jacket	90	79
+Travel	Portable Water Filter	28	86
+Travel	Travel Journal	14	97
+Travel	Powerbank 20k	45	88
+Travel	Trekking Poles	50	85
+Travel	Beach Umbrella	38	90
+Travel	Snorkel Kit	35	89
+Travel	Inflatable Kayak	280	40
+Travel	Cooler Box	55	83
+Travel	Pocket Tool Multiset	30	92
+Travel	Compact Lantern	22	96
+Travel	Thermal Bottle	20	94
+Travel	Folding Bike	300	47
+Travel	Scooter Electric	450	31
+Travel	Car Roof Tent	800	16
+Travel	Portable Shower	65	77
+Travel	Car Sunshade Large	18	99
+Travel	Road Flare Kit	22	95
+Travel	SOS Beacon	120	12
+Travel	Car Battery Charger	110	51
+Travel	Waterproof Car Cover	85	75
+Travel	Trip to Seoul (9 days)	2900	24
+Travel	Trip to Barcelona (6 days)	2100	28
+Travel	Trip to Cairo (7 days)	1700	34
+Travel	Trip to Honolulu (8 days)	2600	20
+Travel	Trip to Vancouver (5 days)	1900	37
+Travel	Trip to Lisbon (6 days)	1600	42
+Travel	Trip to Bangkok (10 days)	2300	27
+Travel	Trip to Istanbul (7 days)	1900	33
+Travel	Machete	45	34
+Travel	Survival Knife	35	40
+Travel	Firestarter Flint	15	90
+Travel	Waterproof Matches	8	95
+Travel	Rope (50m)	25	88
+Travel	Fishing Net	30	72
+Travel	Fishing Rod	40	78
+Travel	Hand Axe	38	61
+Travel	Portable Water Filter	60	55
+Travel	Solar Purifier	120	20
+Travel	Emergency Blanket	10	92
+Travel	Waterproof Tarp	35	80
+Travel	Portable Tent	70	75
+Travel	Coconut Opener Tool	12	94
+Travel	Hand Drill (manual)	20	87
+Travel	Sewing Kit	6	96
+Travel	First Aid Kit	50	50
+Travel	Salt Tablets	14	97
+Travel	Dried Meat Pack	22	89
+Travel	Dried Fruit Pack	18	91
+Travel	Rice Bag (5kg)	10	100
+Travel	Solar Flashlight	25	74
+Travel	SOS Beacon	150	8
+Travel	Compass	15	93
+Travel	Signal Mirror	12	96
+Travel	Whistle	4	98
+Travel	Waterproof Notebook	10	95
+Travel	Multi-Tool	55	46
+Travel	Metal Pot	22	83
+Travel	Water Container	18	90
+Travel	Shovel	28	79
+Travel	Mini Pickaxe	32	68
+Travel	Hammock	45	82
+Travel	Mosquito Net	30	85
+Travel	Spear Gun	120	17
+Travel	Harpoon	85	23
+Travel	Navigation Map	12	97
+Travel	Solar Powerbank	70	39
+Travel	Dry Bag (10L)	20	94
+Travel	Emergency Rations (72h)	40	72
+Real State	Small Apartment (1BR)	120000	70
+Real State	Large Apartment (3BR)	250000	48
+Real State	Penthouse Suite	950000	12
+Real State	Studio Apartment	90000	85
+Real State	Family House (3BR)	310000	60
+Real State	Luxury Villa	1800000	8
+Real State	Beachfront House	2200000	6
+Real State	Mountain Cabin	190000	52
+Real State	Lakefront Cottage	350000	39
+Real State	Country Farmhouse	270000	44
+Real State	Downtown Loft	450000	33
+Real State	Suburban Townhouse	230000	67
+Real State	Tiny Home	80000	91
+Real State	Abandoned House	45000	97
+Real State	Renovation-Required Home	70000	89
+Real State	Student Housing Unit	150000	78
+Real State	Duplex Building	380000	56
+Real State	Triplex Building	520000	41
+Real State	Small Commercial Office (50m²)	220000	72
+Real State	Medium Commercial Office (200m²)	450000	54
+Real State	Large Office Floor (1000m²)	1500000	28
+Real State	Entire Office Building	22000000	5
+Real State	Shopping Mall (Mid-size)	48000000	2
+Real State	Retail Storefront	400000	65
+Real State	Warehouse Small	350000	64
+Real State	Warehouse Large	1300000	30
+Real State	Industrial Factory Building	2500000	18
+Real State	Mixed-Use Building	3200000	21
+Real State	Parking Garage (3 Floors)	1600000	26
+Real State	Self-storage Facility	900000	38
+Real State	Motel (20 rooms)	2400000	22
+Real State	Hotel Boutique (40 rooms)	6200000	14
+Real State	Resort Complex	38000000	3
+Real State	Empty Land Plot (400m²)	80000	88
+Real State	Farmland (5 hectares)	350000	50
+Real State	Forest Acreage (50 hectares)	800000	29
+Real State	Desert Land Parcel	45000	96
+Real State	Mountain Ridge Property	600000	25
+Real State	Island (Small Private)	12000000	4
+Real State	Island (Large Private)	40000000	1
+Real State	Construction Crane	150000	62
+Real State	Cement Mixer Industrial	45000	83
+Real State	Scaffolding Set	15000	92
+Real State	Shipping Container Home Frame	19000	89
+Real State	Solar Panel Set (20 units)	12000	93
+Real State	Water Well System	8000	94
+Real State	Sewage Treatment Mini Plant	25000	77
+Real State	Security Gate System	10000	86
+Real State	Property Management Office Setup	30000	74
+Real State	Real Estate Sign Kit	300	100
+Real State	Door Lock Set Premium	200	98
+Real State	Smart Home System	2500	63
+Real State	Garden Shed	7000	84
+Real State	Rooftop Terrace Kit	8500	59
+Real State	Home Foundation Kit	12000	73
+Real State	Swimming Pool Construction Set	30000	36
+Real State	Backyard Sauna Cabin	16000	47
+Real State	Outdoor Kitchen Build Kit	14000	61
+Real State	Access Control Turnstile	9000	79
+Real State	Small Outdoor Stage	15000	82
+Real State	Medium Outdoor Stage	45000	61
+Real State	Large Outdoor Stage	120000	37
+Real State	Portable Festival Stage	22000	78
+Real State	Acoustic Garden Stage	18000	84
+Real State	Industrial Warehouse Venue	75000	52
+Real State	Converted Church Venue	140000	29
+Real State	Urban Rooftop Venue	90000	48
+Real State	Riverside Festival Grounds	320000	25
+Real State	Desert Festival Grounds	450000	17
+Real State	Beach Festival Area	380000	21
+Real State	Forest Clearing Venue	50000	67
+Real State	Mountain Summit Venue	150000	28
+Real State	City Park Festival Zone	260000	41
+Real State	Stadium (Mid-size)	9000000	12
+Real State	Stadium (Large)	25000000	6
+Real State	Arena Event Hall	3800000	19
+Real State	Amphitheater Small	400000	58
+Real State	Amphitheater Large	2000000	23
+Real State	Underground Club Venue	160000	46
+Real State	Abandoned Factory Rave Spot	70000	74
+Real State	Harbor Dock Festival Zone	500000	22
+Real State	Island Festival Grounds	2000000	10
+Real State	Floating Stage (Lake)	85000	55
+Real State	Floating Stage (Ocean)	210000	33
+Real State	Street Block Festival Setup	25000	88
+Real State	City Plaza Performance Area	120000	60
+Real State	Multi-Stage Festival Park	3500000	9
+Real State	International Festival Grounds	12000000	4
+Real State	Temporary Festival City (Burner-style)	5000000	3
+Investiments	“Sunshyne Over Fields” (Oil Painting)	82000	12
+Investiments	“Marble Silence VIII” (Sculpture)	210000	8
+Investiments	“Blue Fragments Study”	45000	22
+Investiments	“Gilt Horizon Triptych”	120000	15
+Investiments	“Eternal Gesture No. 3”	67000	18
+Investiments	“Crimson Drift Canvas”	33000	28
+Investiments	“Glasswave Form”	95000	14
+Investiments	“Inkstorm Sketchbook”	12000	40
+Investiments	“Silver Leaf Mask”	29000	25
+Investiments	“Monolith of Quiet Days”	310000	9
+Investiments	Tesa Motors	850000000	55
+Investiments	Macrosoft	1400000000	60
+Investiments	Amazen Corp.	2100000000	58
+Investiments	Gugel Systems	1800000000	57
+Investiments	Appool Inc.	1900000000	54
+Investiments	Facebork Media	760000000	62
+Investiments	Nykee Global	320000000	70
+Investiments	KoKa-Kolo	290000000	73
+Investiments	Nubisoft	110000000	75
+Investiments	Brocter & Gambel	250000000	71
+Investiments	Orange Tower Painting	48000	31
+Investiments	Saffron Mist Ceramic	19000	38
+Investiments	“Winter Vessel Study”	22000	35
+Investiments	“Woven Echoes”	55000	27
+Investiments	“Opaline Dreamscape”	88000	19
+Investiments	Desert Sand Temple Replica	26000	42
+Investiments	Pearl Spine Abstract	61000	26
+Investiments	Reefwave Bronze Sculpture	74000	24
+Investiments	“Sealed Letter of Light”	31000	33
+Investiments	“Serpent Spiral Column”	140000	13
+Investiments	The Taj M'hal	35000000	5
+Investiments	The Pryamids of Ghiza	50000000	4
+Investiments	The Loren Colosseon	44000000	6
+Investiments	Stona Hengge	18000000	10
+Investiments	The Grazing Wall of Chyina	60000000	3
+Investiments	Christ the Redemer	20000000	9
+Investiments	Macchu Pichou	25000000	7
+Investiments	Burbj Khalif	55000000	6
+Investiments	The Eiffol Tour	28000000	8
+Investiments	Petra Sanctum	32000000	7
+Investiments	“Portrait of a Forgotten King”	300000	11
+Investiments	“Storm at the White Peninsula”	150000	16
+Investiments	“Mirrored Faces Study”	42000	30
+Investiments	“Colorstorm Cantata”	18000	37
+Investiments	“Unfinished Tides”	21000	36
+Investiments	“Ivory Cathedral”	88000	20
+Investiments	“Blooming Grayscale”	17000	41
+Investiments	“Silent Marble Twins”	95000	23
+Investiments	“Acrylic Rainfall”	11000	45
+Investiments	“Twilight Silkscreen”	27000	32
+Investiments	Streemify	440000000	63
+Investiments	Netflox Studios	390000000	64
+Investiments	Spootify Sounds	270000000	72
+Investiments	Ubre Transport	330000000	69
+Investiments	Starlucks Coffee Co.	310000000	68
+Investiments	Dizzney WorldCorp	800000000	61
+Investiments	Reddhut	150000000	74
+Investiments	Pingsu Software	90000000	77
+Investiments	Lixar Industries	125000000	76
+Investiments	Epic Gams	200000000	67
+Investiments	Angkor Whatt	26000000	8
+Investiments	The Shoen Temple	17000000	11
+Investiments	The Sagrata Famillia	29000000	9
+Investiments	The Bludd Castle	14000000	13
+Investiments	The Golden Pavellon	31000000	11
+Investiments	“Obsidian Bloom”	55000	29
+Investiments	“Drifting Sphere”	38000	34
+Investiments	“Mosaic of Glass Rivers”	132000	17
+Investiments	“Portrait of Echoes”	76000	21
+Investiments	“Cracked Marble Sanctuary”	110000	13
+Investiments	“Red Sand Imprint”	16000	39
+Investiments	“Gate of Abstract Noon”	48000	31
+Investiments	“Origami Planet”	60000	28
+Investiments	“Hanging Shoreline”	23000	35
+Investiments	“Breath of the Mountain”	130000	12
+Investiments	Northrup Grommon	500000000	59
+Investiments	Raythoeon Dynamics	600000000	56
+Investiments	Lockhed Marten	700000000	55
+Investiments	Smamsong Electronics	900000000	53
+Investiments	Sonii Creation Labs	680000000	66
+Investiments	Intoll Corp	740000000	62
+Investiments	Orackl Systems	500000000	64
+Investiments	Warlmart	320000000	73
+Investiments	Geeni Motors	280000000	76
+Investiments	XaoMi Techworks	240000000	75
+Investiments	The Forbidden Pallace	40000000	6
+Investiments	The Floting Gardens of Babylone	70000000	2
+Investiments	Mount Ruhsmore	22000000	10
+Investiments	The Leening Tower of Piza	18000000	12
+Investiments	Chycheñ Itzaa	20000000	9
+Investiments	“Solar Choir Sculpture”	145000	15
+Investiments	“Chartreuse Passage”	28000	30
+Investiments	“Winged Marble Knot”	190000	12
+Investiments	“Fractured Dawn Acrylic”	34000	29
+Investiments	“Thousand Leaves Mask”	82000	18
+Territories	Isle of Solara	9000000	18
+Territories	Port Lymora	4500000	33
+Territories	Republic of Velosia	12000000	14
+Territories	Kingdom of Taliu	7000000	28
+Territories	Marindi Islands	5200000	36
+Territories	Azura Keys	3100000	42
+Territories	Norvani Coast	15000000	12
+Territories	San Meridia	9800000	20
+Territories	Aldorian Republic	16000000	11
+Territories	Vespera Island	2400000	55
+Territories	Neo-Kalmar	19000000	9
+Territories	Tereno Isles	3400000	47
+Territories	Palma Azul	6000000	31
+Territories	Arcania Atoll	2200000	59
+Territories	Solmora	4300000	39
+Territories	Kyra Archipelago	1500000	63
+Territories	Rivona Republic	17000000	10
+Territories	Erenia	800000	72
+Territories	Isla Ventoria	900000	70
+Territories	Montesia	600000	75
+Territories	Ardoria	3000000	46
+Territories	Belvarin	1100000	68
+Territories	Coral Crescent	950000	69
+Territories	Danube Keys	4800000	37
+Territories	Frostpeak Isle	2100000	58
+Territories	Suncrest Island	1400000	65
+Territories	Winterhold Peninsula	3700000	44
+Territories	Republic of Xandara	26000000	6
+Territories	Isla Verdana	1600000	62
+Territories	The Sandbar Kingdom	1300000	66
+Territories	Zephyria	10200000	21
+Territories	Mokuba Isles	2300000	57
+Territories	Isle of Inaara	1700000	61
+Territories	Oldcrest Duchy	90000000	2
+Territories	South Mavena	450000	77
+Territories	Highstar Island	2000000	60
+Territories	Embercoast	5100000	34
+Territories	Vantari Republic	20000000	7
+Territories	Central Lysos	18000000	8
+Territories	Crater Atoll	300000	82
+Territories	Isla Borealis	700000	73
+Territories	Verdan Archipelago	22000000	5
+Territories	Aeloria	13000000	16
+Territories	Obsidian Shore	2500000	56
+Territories	Isla Tempestra	2900000	49
+Territories	Goldenreef Isles	2100000	58
+Territories	Eversea	5800000	32
+Territories	Ravan Coast	310000	84
+Territories	Kylon Republic	9000000	19
+Territories	Nira Islands	1400000	65
+Territories	Coldwharf	600000	76
+Territories	Emberfall Island	4700000	38
+Territories	Wistera	3200000	45
+Territories	North Solen	2800000	51
+Territories	East Carrin	1500000	64
+Territories	Nova Aster	25000000	4
+Territories	Fyloria Isles	5500000	35
+Territories	Republic of Dalmor	8800000	23
+Territories	Zandria	30000000	3
+Territories	Isla Tenebra	1900000	62
+Territories	Chalkstone Crescent	2600000	54
+Territories	Sunveil Island	3300000	45
+Territories	Copper Coast	420000	79
+Territories	Ironshell Isle	530000	78
+Territories	Edessa	3500000	41
+Territories	Dorian Coast	2800000	53
+Territories	Silverbank Peninsula	6700000	30
+Territories	Republic of Mynia	1200000	67
+Territories	Altoveria	9800000	22
+Territories	Grand Tival	14000000	13
+Territories	Western Vaelor	5000000	33
+Territories	Sapphire Shoals	800000	71
+Territories	Isla Orin	1100000	68
+Territories	The Zircon Chain	6000000	31
+Territories	Makoro Isles	450000	83
+Territories	Starcrest Island	350000	81
+Territories	Trinia Republic	22000000	5
+Territories	Avaleon	7500000	27
+Territories	Yalara	3000000	50
+Territories	Strait of Merin	580000	76
+Territories	Atlantis Minor	99000000	1
+Territories	Forgotten Archipelago	2600000	52
+Territories	Isle of Drova	150000	87
+Territories	Branthos Isles	330000	85
+Territories	Asterium	16000000	11
+Territories	Cloudbreaker Island	2100000	58
+Territories	Republic of Vensal	9000000	18
+Territories	Celestian Archipelago	17000000	9
+Territories	East Rulor	500000	80
+Territories	Marvona Coast	2700000	49
+Territories	Luneris Island	3800000	43
+Territories	Delta Vyn	4400000	40
+Territories	Isla Seraphel	260000	83
+Territories	Kingdom of Orvel	20000000	7
+Territories	Miraris Isles	900000	70
+Territories	Terra Vanto	14000000	13

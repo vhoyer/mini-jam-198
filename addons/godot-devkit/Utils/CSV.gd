@@ -1,10 +1,10 @@
-class_name CSV
+class_name CSVFile
 
 var current: Dictionary:
 	get():
 		var dict = {};
 		for i in columns.size():
-			var value = null if line.size() <= i else line[i];
+			var value = (null as Variant) if line.size() <= i else line[i];
 			dict[columns[i]] = value;
 		return dict;
 
@@ -12,8 +12,11 @@ var file: FileAccess;
 var line: PackedStringArray;
 
 var columns: PackedStringArray;
+var delimiter: String
 
-func _init(path: String, columns: PackedStringArray = []):
+func _init(path: String, delimiter:= ",", columns: PackedStringArray = []):
+	self.delimiter = delimiter
+
 	file = FileAccess.open(path, FileAccess.READ)
 	if (columns.size() == 0):
 		next();
@@ -31,5 +34,5 @@ func has_next() -> bool:
 
 func next() -> bool:
 	var has_next = self.has_next();
-	line = file.get_csv_line();
+	line = file.get_csv_line(delimiter);
 	return has_next;
