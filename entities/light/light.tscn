@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=4 uid="uid://2ute5uskkcon"]
+
+[ext_resource type="PackedScene" uid="uid://dscjusbtujld0" path="res://assets/3D/fluorecent_light.glb" id="1_mkifa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qas6"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mkifa"]
+_surfaces = [{
+"aabb": AABB(-0.005, 0.029999971, -0.505, 0.01, 2, 1.01),
+"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_8qas6"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("Cteju4DC9TykcP2+Cteju4DC9TyuRwG/Cteju4XrAUCuRwG/CtejO4DC9TyuRwG/Cteju4DC9TyuRwG/Cteju4DC9TykcP2+Cteju4XrAUCuRwG/Cteju4DC9TyuRwG/CtejO4DC9TyuRwG/Cteju4XrAUCuRwG/Cteju4XrAUCkcP2+Cteju4DC9TykcP2+Cteju4DC9TykcP2+Cteju4XrAUCkcP2+CtejO4XrAUCkcP2+CtejO4XrAUCkcP2+Cteju4XrAUCkcP2+Cteju4XrAUCuRwG/Cteju4DC9TykcP2+CtejO4DC9TykcP2+CtejO4DC9TyuRwG/CtejO4XrAUCkcP2+CtejO4DC9TykcP2+Cteju4DC9TykcP2+CtejO4DC9TyuRwG/CtejO4DC9TykcP2+CtejO4XrAUCkcP2+CtejO4DC9TyuRwG/CtejO4XrAUCuRwG/Cteju4XrAUCuRwG/Cteju4XrAUCuRwG/CtejO4XrAUCuRwG/CtejO4XrAUCkcP2+CtejO4XrAUCkcP2+CtejO4XrAUCuRwG/CtejO4DC9TyuRwG/Cteju4DC9TyuRwE/Cteju4DC9TykcP0+Cteju4XrAUCkcP0+CtejO4DC9TykcP0+Cteju4DC9TykcP0+Cteju4DC9TyuRwE/Cteju4XrAUCkcP0+Cteju4DC9TykcP0+CtejO4DC9TykcP0+Cteju4XrAUCkcP0+Cteju4XrAUCuRwE/Cteju4DC9TyuRwE/Cteju4DC9TyuRwE/Cteju4XrAUCuRwE/CtejO4XrAUCuRwE/CtejO4XrAUCuRwE/Cteju4XrAUCuRwE/Cteju4XrAUCkcP0+Cteju4DC9TyuRwE/CtejO4DC9TyuRwE/CtejO4DC9TykcP0+CtejO4XrAUCuRwE/CtejO4DC9TyuRwE/Cteju4DC9TyuRwE/CtejO4DC9TykcP0+CtejO4DC9TyuRwE/CtejO4XrAUCuRwE/CtejO4DC9TykcP0+CtejO4XrAUCkcP0+Cteju4XrAUCkcP0+Cteju4XrAUCkcP0+CtejO4XrAUCkcP0+CtejO4XrAUCuRwE/CtejO4XrAUCuRwE/CtejO4XrAUCkcP0+CtejO4DC9TykcP0+AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
+}]
+
+[node name="Light" type="Node3D"]
+
+[node name="fluorecent_light" parent="." instance=ExtResource("1_mkifa")]
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_mkifa")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+light_energy = 5.0
+light_volumetric_fog_energy = 5.0
+spot_range = 10.0
+spot_angle = 79.694756

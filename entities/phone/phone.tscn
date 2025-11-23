@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://h1x0oooetx0v"]
+[gd_scene load_steps=5 format=3 uid="uid://h1x0oooetx0v"]
 
+[ext_resource type="Texture2D" uid="uid://br2nyelwu0apo" path="res://entities/phone/phone.png" id="1_wa0hj"]
 [ext_resource type="Script" uid="uid://cicqml8aufkwn" path="res://entities/phone/balance.gd" id="1_xa8yf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv4bu"]
+atlas = ExtResource("1_wa0hj")
+region = Rect2(150, 40, 330, 570)
+
+[sub_resource type="LabelSettings" id="LabelSettings_apcos"]
+font_size = 32
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Phone" type="Control"]
 layout_mode = 3
@@ -10,29 +20,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_left = -13.999997
+offset_top = -204.0
+offset_right = 316.0
+offset_bottom = 366.0
 grow_vertical = 0
+rotation = 0.08726646
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_dv4bu")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -141.0
+offset_right = 141.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_type_variation = &"MarginContainerMedium"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Bank"
-
 [node name="Balance" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "$ %d"
+label_settings = SubResource("LabelSettings_apcos")
 script = ExtResource("1_xa8yf")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://hgtbvqw7hjnr"]
 
 [ext_resource type="Script" uid="uid://ja325ffcvfiq" path="res://entities/receipt/receipt.gd" id="1_q6for"]
-[ext_resource type="LabelSettings" uid="uid://fb4csm8b7toh" path="res://entities/receipt/receipt_label.tres" id="1_ureme"]
 [ext_resource type="PackedScene" uid="uid://dhvvko25hv1n5" path="res://entities/receipt/receipt_item.tscn" id="2_s8n7j"]
+[ext_resource type="Texture2D" uid="uid://c4eoind2rfugo" path="res://entities/receipt/ymart_logo.png" id="3_q6for"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8n7j"]
 content_margin_left = 8.0
@@ -36,24 +36,24 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -217.0
-offset_top = -51.0
+offset_left = -216.99994
+offset_top = -116.99994
 offset_right = -1.0
+offset_bottom = 1.000061
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 0.04363323
-pivot_offset = Vector2(0, 51)
+pivot_offset = Vector2(0, 118)
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8n7j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "YMart"
-label_settings = ExtResource("1_ureme")
-horizontal_alignment = 1
+texture = ExtResource("3_q6for")
+expand_mode = 5
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
