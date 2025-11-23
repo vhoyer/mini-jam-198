@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=15 format=3 uid="uid://bikle0m56vgy0"]
 
 [ext_resource type="PackedScene" uid="uid://dqvxh5cs8dxxc" path="res://entities/player/player.tscn" id="1_erxa5"]
 [ext_resource type="PackedScene" uid="uid://h1x0oooetx0v" path="res://entities/phone/phone.tscn" id="1_mwv38"]
 [ext_resource type="PackedScene" uid="uid://hgtbvqw7hjnr" path="res://entities/receipt/receipt.tscn" id="2_65t83"]
 [ext_resource type="PackedScene" uid="uid://ci03lct0nuflw" path="res://entities/shelves/shelves.tscn" id="2_ljefa"]
+[ext_resource type="PackedScene" uid="uid://b5hpc674k7ita" path="res://entities/hud_prompts/hud_prompts.tscn" id="3_65t83"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erxa5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -52,6 +53,8 @@ size = Vector3(66, 0.1, 66)
 [node name="Phone" parent="." instance=ExtResource("1_mwv38")]
 
 [node name="Receipt" parent="." instance=ExtResource("2_65t83")]
+
+[node name="HudPrompts" parent="." instance=ExtResource("3_65t83")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5kwao")

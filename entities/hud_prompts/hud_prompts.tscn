@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5hpc674k7ita"]
+
+[ext_resource type="Script" uid="uid://dkv06tio8q5t0" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="1_7u5ra"]
+[ext_resource type="Script" uid="uid://b36y2txgoyi4q" path="res://entities/hud_prompts/buy_action.gd" id="1_jsmn4"]
+[ext_resource type="LabelSettings" uid="uid://c2qka2gpqh64b" path="res://entities/hud_prompts/hud_prompts_label.tres" id="3_yvahm"]
+
+[sub_resource type="Texture2D" id="Texture2D_jsmn4"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("1_7u5ra")
+path = "buy"
+metadata/_custom_type_script = "uid://dkv06tio8q5t0"
+
+[sub_resource type="Gradient" id="Gradient_symyc"]
+offsets = PackedFloat32Array(0.1, 0.1, 0.2, 0.2)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_70tw1"]
+gradient = SubResource("Gradient_symyc")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="HudPrompts" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -115.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BuyAction" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_jsmn4")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BuyAction"]
+layout_mode = 2
+text = "Buy %s"
+label_settings = ExtResource("3_yvahm")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/BuyAction"]
+layout_mode = 2
+texture = SubResource("Texture2D_jsmn4")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_70tw1")
