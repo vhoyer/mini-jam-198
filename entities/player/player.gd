@@ -23,6 +23,9 @@ var _looking_product_position: Marker3D = %LookingProductPosition
 @onready
 var _base_camera_position: Marker3D = %BaseCameraPosition
 
+@onready
+var _box_drop_off: Marker3D = %BoxDropOff
+
 
 @onready
 var _hands_reach_area: Area3D = %HandsReachArea3D
@@ -72,6 +75,7 @@ func _physics_process(delta: float) -> void:
 
 		if Input.is_action_just_pressed('buy'):
 			SaveManager.data.receipt_items_push(_closest_product.product_dict)
+			_place_product()
 
 	## camera stuff
 	_camera_pivot.global_position = _camera_pivot.global_position.lerp(self.global_position, delta * 20.0)
@@ -101,3 +105,12 @@ func _process(_delta: float) -> void:
 
 func _on_hands_reach_area_3d_body_entered_or_exited(_body: Node3D) -> void:
 	_products_in_range = _hands_reach_area.get_overlapping_bodies()
+
+
+func _place_product() -> void:
+	var tween:= _closest_product.create_tween()
+	tween.tween_property(_closest_product, 'global_position', _box_drop_off.global_position + (self.linear_velocity / 3), 0.15)
+
+	_products_in_range = _hands_reach_area.get_overlapping_bodies()
+	_closest_product.pickable = false
+	_closest_product = null
