@@ -42,6 +42,10 @@ folder_colors={
 "res://stages/": "yellow"
 }
 
+[godot_devkit]
+
+save_manager/custom_empty_save_data_type="EmptyGameSaveData"
+
 [gui]
 
 theme/custom="uid://d0hnvyh11hej0"

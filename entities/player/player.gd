@@ -38,7 +38,7 @@ var _look_at_pos: Vector3
 var _closest_product: ProductBox = null:
 	set(value):
 		_closest_product = value
-		ProductBox.current_selected = value
+		SaveManager.data.selected_product = value.product_dict if value else {}
 
 var _products_in_range: Array = []
 var _hand_pos: Vector3:

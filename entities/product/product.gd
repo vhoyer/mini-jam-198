@@ -53,6 +53,20 @@ var price_label: Label3D = %Price
 var box_model_placement: Marker3D = %BoxModelPlacement
 
 
+var product_dict: Dictionary:
+	set(value):
+		product_dict = value
+		label = value.get('name', 'undefined')
+		price = value.get('price', 0)
+		rarity = value.get('rarity', 0)
+	get():
+		return product_dict if product_dict else {
+			'name': label,
+			'price': price,
+			'rarity': rarity,
+			}
+
+
 var current_box: Node3D
 var current_box_meshs: Array
 
@@ -87,7 +101,7 @@ func _process(_delta: float) -> void:
 func _set_hightlight_shader() -> void:
 	if !current_box: return
 
-	var selected = self == ProductBox.current_selected
+	var selected = product_dict == SaveManager.data.selected_product
 
 	var new_material = _highlight_material if selected else null
 

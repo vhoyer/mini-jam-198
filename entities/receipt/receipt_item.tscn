@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhvvko25hv1n5"]
+
+[ext_resource type="LabelSettings" uid="uid://qjxs5ad2oto0" path="res://entities/receipt/receipt_label_small.tres" id="1_8behq"]
+[ext_resource type="Script" uid="uid://uwi0u8q4pv80" path="res://entities/receipt/receipt_item.gd" id="1_mns0h"]
+
+[node name="ReceiptItem" type="HBoxContainer"]
+script = ExtResource("1_mns0h")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Compact Super Amazing Product"
+label_settings = ExtResource("1_8behq")
+autowrap_mode = 3
+
+[node name="Price" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$ %d"
+label_settings = ExtResource("1_8behq")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=14 format=3 uid="uid://bikle0m56vgy0"]
 
 [ext_resource type="PackedScene" uid="uid://dqvxh5cs8dxxc" path="res://entities/player/player.tscn" id="1_erxa5"]
+[ext_resource type="PackedScene" uid="uid://h1x0oooetx0v" path="res://entities/phone/phone.tscn" id="1_mwv38"]
+[ext_resource type="PackedScene" uid="uid://hgtbvqw7hjnr" path="res://entities/receipt/receipt.tscn" id="2_65t83"]
 [ext_resource type="PackedScene" uid="uid://ci03lct0nuflw" path="res://entities/shelves/shelves.tscn" id="2_ljefa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erxa5"]
@@ -42,7 +44,14 @@ uv1_world_triplanar = true
 material = SubResource("StandardMaterial3D_ljefa")
 size = Vector2(66, 66)
 
+[sub_resource type="BoxMesh" id="BoxMesh_ljefa"]
+size = Vector3(66, 0.1, 66)
+
 [node name="Prototype" type="Node"]
+
+[node name="Phone" parent="." instance=ExtResource("1_mwv38")]
+
+[node name="Receipt" parent="." instance=ExtResource("2_65t83")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5kwao")
@@ -59,6 +68,13 @@ shape = SubResource("WorldBoundaryShape3D_bxatn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_5kwao")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.9999999, 8.742277e-08, 0, -8.742277e-08, -1, 0, 0, 0, 0.9999999, 0, 8, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_ljefa")
+mesh = SubResource("BoxMesh_ljefa")
+skeleton = NodePath("")
 
 [node name="Player" parent="." instance=ExtResource("1_erxa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062492386, 0.008121848, -0.66435146)

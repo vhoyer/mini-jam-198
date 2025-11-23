@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://hgtbvqw7hjnr"]
+
+[ext_resource type="Script" uid="uid://ja325ffcvfiq" path="res://entities/receipt/receipt.gd" id="1_q6for"]
+[ext_resource type="LabelSettings" uid="uid://fb4csm8b7toh" path="res://entities/receipt/receipt_label.tres" id="1_ureme"]
+[ext_resource type="PackedScene" uid="uid://dhvvko25hv1n5" path="res://entities/receipt/receipt_item.tscn" id="2_s8n7j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8n7j"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.82, 0.78173333, 0.656, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_q6for"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+
+[node name="Receipt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6for")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -217.0
+offset_top = -87.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.08726646
+pivot_offset = Vector2(0, 88)
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8n7j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "YMart"
+label_settings = ExtResource("1_ureme")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_q6for")
+
+[node name="Items" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ReceiptItem" parent="PanelContainer/VBoxContainer/Items" instance=ExtResource("2_s8n7j")]
+layout_mode = 2
