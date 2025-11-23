@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqvxh5cs8dxxc"]
+[gd_scene load_steps=13 format=4 uid="uid://dqvxh5cs8dxxc"]
 
 [ext_resource type="Script" uid="uid://co5fbfk4p7661" path="res://entities/player/player.gd" id="1_symyc"]
 
@@ -28,15 +28,23 @@ material = SubResource("StandardMaterial3D_abrql")
 radius = 0.3
 height = 1.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_symyc"]
-size = Vector3(1, 0.9, 1.2)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_symyc"]
+data = PackedVector3Array(-0.5, -0.45, -0.59999996, -0.5, 0.45, -0.59999996, -0.5, -0.45, 0.59999996, -0.5, -0.45, -0.59999996, -0.5, -0.45, 0.59999996, 0.5, -0.45, -0.59999996, -0.5, -0.45, -0.59999996, 0.5, -0.45, -0.59999996, -0.5, 0.45, -0.59999996, -0.5, 0.45, -0.59999996, -0.4479, 0.45, -0.5467, -0.5, 0.45, 0.59999996, -0.5, 0.45, -0.59999996, 0.5, 0.45, -0.59999996, -0.4479, 0.45, -0.5467, -0.5, -0.45, 0.59999996, -0.5, 0.45, -0.59999996, -0.5, 0.45, 0.59999996, -0.5, 0.45, 0.59999996, -0.4479, 0.45, -0.5467, -0.4479, 0.45, 0.55329996, -0.5, -0.45, 0.59999996, -0.5, 0.45, 0.59999996, 0.5, 0.45, 0.59999996, -0.5, 0.45, 0.59999996, -0.4479, 0.45, 0.55329996, 0.45209998, 0.45, 0.55329996, -0.5, -0.45, 0.59999996, 0.5, -0.45, 0.59999996, 0.5, -0.45, -0.59999996, -0.5, -0.45, 0.59999996, 0.5, 0.45, 0.59999996, 0.5, -0.45, 0.59999996, 0.5, -0.45, -0.59999996, 0.5, -0.45, 0.59999996, 0.5, 0.45, 0.59999996, -0.5, 0.45, -0.59999996, 0.5, -0.45, -0.59999996, 0.5, 0.45, -0.59999996, 0.5, 0.45, -0.59999996, 0.45209998, 0.45, -0.5467, -0.4479, 0.45, -0.5467, 0.5, -0.45, -0.59999996, 0.5, 0.45, 0.59999996, 0.5, 0.45, -0.59999996, 0.5, 0.45, -0.59999996, 0.45209998, 0.45, 0.55329996, 0.45209998, 0.45, -0.5467, -0.5, 0.45, 0.59999996, 0.45209998, 0.45, 0.55329996, 0.5, 0.45, 0.59999996, 0.5, 0.45, -0.59999996, 0.5, 0.45, 0.59999996, 0.45209998, 0.45, 0.55329996, -0.4479, -0.3963, -0.5467, -0.4479, -0.3963, 0.55329996, -0.4479, 0.45, -0.5467, -0.4479, -0.3963, -0.5467, 0.45209998, -0.3963, -0.5467, -0.4479, -0.3963, 0.55329996, -0.4479, -0.3963, 0.55329996, 0.45209998, -0.3963, 0.55329996, -0.4479, 0.45, 0.55329996, -0.4479, -0.3963, -0.5467, -0.4479, 0.45, -0.5467, 0.45209998, 0.45, -0.5467, -0.4479, -0.3963, 0.55329996, -0.4479, 0.45, 0.55329996, -0.4479, 0.45, -0.5467, -0.4479, -0.3963, -0.5467, 0.45209998, 0.45, -0.5467, 0.45209998, -0.3963, -0.5467, -0.4479, -0.3963, 0.55329996, 0.45209998, -0.3963, -0.5467, 0.45209998, -0.3963, 0.55329996, 0.45209998, -0.3963, -0.5467, 0.45209998, 0.45, 0.55329996, 0.45209998, -0.3963, 0.55329996, 0.45209998, -0.3963, -0.5467, 0.45209998, 0.45, -0.5467, 0.45209998, 0.45, 0.55329996, 0.45209998, -0.3963, 0.55329996, 0.45209998, 0.45, 0.55329996, -0.4479, 0.45, 0.55329996)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bls4j"]
 albedo_color = Color(0.24939999, 0.29, 0.2832333, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_symyc"]
-material = SubResource("StandardMaterial3D_bls4j")
-size = Vector3(1, 0.9, 1.2)
+[sub_resource type="ArrayMesh" id="ArrayMesh_sglur"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.45, -0.6, 1, 0.9, 1.2),
+"attribute_data": PackedByteArray("AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8Ao3Q/M6tyPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAACjdD8zq3I/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8Ao3Q/M6tyP1iFHz0zq3I/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAgD9YhR89M6tyP1iFHz3QTEQ9AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAo3Q/0ExEPQCjdD8zq3I/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAABYhR890ExEPQCjdD/QTEQ9AAAAAAAAgD9YhR890ExEPQAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAFiFHz3QTEQ9AACAPwAAAAAAAIA/AACAP8hxdD0AAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAgD/IcXQ9AACAPwAAAAAAAIA/5LhwPwAAAADkuHA/AACAPwAAgD/IcXQ9AACAP8hxdD0AAAAAAACAPwAAAAAAAAAA5LhwPwAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAgD/IcXQ9AAAAAAAAgD8AAAAAAACAPwAAgD/IcXQ9AACAP8hxdD0AAAAAAAAAAAAAgD8AAAAAyHF0PQAAgD/IcXQ9"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_bls4j"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("AAAAv2Zm5r6amRm/AAAAv2Zm5j6amRm/AAAAv2Zm5r6amRk/AAAAv2Zm5r6amRm/AAAAv2Zm5r6amRk/AAAAP2Zm5r6amRm/AAAAv2Zm5r6amRm/AAAAP2Zm5r6amRm/AAAAv2Zm5j6amRm/AAAAv2Zm5j6amRm/ZlblvmZm5j7N9gu/AAAAv2Zm5j6amRk/AAAAv2Zm5j6amRm/AAAAP2Zm5j6amRm/ZlblvmZm5j7N9gu/AAAAv2Zm5r6amRk/AAAAv2Zm5j6amRm/AAAAv2Zm5j6amRk/AAAAv2Zm5j6amRk/ZlblvmZm5j7N9gu/ZlblvmZm5j7Nog0/AAAAv2Zm5r6amRk/AAAAv2Zm5j6amRk/AAAAP2Zm5j6amRk/AAAAv2Zm5j6amRk/ZlblvmZm5j7Nog0/ZnbnPmZm5j7Nog0/AAAAv2Zm5r6amRk/AAAAP2Zm5r6amRk/AAAAP2Zm5r6amRm/AAAAv2Zm5r6amRk/AAAAP2Zm5j6amRk/AAAAP2Zm5r6amRk/AAAAP2Zm5r6amRm/AAAAP2Zm5r6amRk/AAAAP2Zm5j6amRk/AAAAv2Zm5j6amRm/AAAAP2Zm5r6amRm/AAAAP2Zm5j6amRm/AAAAP2Zm5j6amRm/ZnbnPmZm5j7N9gu/ZlblvmZm5j7N9gu/AAAAP2Zm5r6amRm/AAAAP2Zm5j6amRk/AAAAP2Zm5j6amRm/AAAAP2Zm5j6amRm/ZnbnPmZm5j7Nog0/ZnbnPmZm5j7N9gu/AAAAv2Zm5j6amRk/ZnbnPmZm5j7Nog0/AAAAP2Zm5j6amRk/AAAAP2Zm5j6amRm/AAAAP2Zm5j6amRk/ZnbnPmZm5j7Nog0/Zlblvmbmyr7N9gu/Zlblvmbmyr7Nog0/ZlblvmZm5j7N9gu/Zlblvmbmyr7N9gu/ZnbnPmbmyr7N9gu/Zlblvmbmyr7Nog0/Zlblvmbmyr7Nog0/ZnbnPmbmyr7Nog0/ZlblvmZm5j7Nog0/Zlblvmbmyr7N9gu/ZlblvmZm5j7N9gu/ZnbnPmZm5j7N9gu/Zlblvmbmyr7Nog0/ZlblvmZm5j7Nog0/ZlblvmZm5j7N9gu/Zlblvmbmyr7N9gu/ZnbnPmZm5j7N9gu/ZnbnPmbmyr7N9gu/Zlblvmbmyr7Nog0/ZnbnPmbmyr7N9gu/ZnbnPmbmyr7Nog0/ZnbnPmbmyr7N9gu/ZnbnPmZm5j7Nog0/ZnbnPmbmyr7Nog0/ZnbnPmbmyr7N9gu/ZnbnPmZm5j7N9gu/ZnbnPmZm5j7Nog0/ZnbnPmbmyr7Nog0/ZnbnPmZm5j7Nog0/ZlblvmZm5j7Nog0/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//////AAD/f/////8AAP9//////wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA////f/9/AID///9//38AgP///3//fwCA/3//////////f/////////9//////////////wAA/7//////AAD/v/////8AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/////f/9/AID///9//38AgP///3//fwCA/3//fwAA/7//f/9/AAD/v/9//38AAP+//3//////////f/////////9/////////AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////wAA/7//////AAD/v/////8AAP+/")
+}]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_symyc"]
 radius = 1.2
@@ -156,19 +164,21 @@ mesh = SubResource("CapsuleMesh_sfv1e")
 unique_name_in_owner = true
 transform = Transform3D(1, 5.3290705e-15, 1.4210855e-14, 0, 0.9999998, 1.4901161e-08, 0, -1.4901161e-08, 0.9999998, 0, 1, 0.031)
 
-[node name="cart" type="CollisionShape3D" parent="."]
+[node name="Cart" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-shape = SubResource("BoxShape3D_symyc")
+shape = SubResource("ConcavePolygonShape3D_symyc")
 
-[node name="CenterOfMass" type="Marker3D" parent="cart"]
+[node name="CenterOfMass" type="Marker3D" parent="Cart"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 
-[node name="MeshCart" type="MeshInstance3D" parent="cart"]
-mesh = SubResource("BoxMesh_symyc")
-skeleton = NodePath("../..")
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Cart"]
+mesh = SubResource("ArrayMesh_sglur")
 
-[node name="HandsReachArea3D" type="Area3D" parent="cart"]
+[node name="BoxPile" type="Node3D" parent="Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3519932, 0)
+
+[node name="HandsReachArea3D" type="Area3D" parent="Cart"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.1)
 collision_layer = 0
@@ -176,7 +186,7 @@ collision_mask = 2
 input_ray_pickable = false
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cart/HandsReachArea3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cart/HandsReachArea3D"]
 shape = SubResource("SphereShape3D_symyc")
 
 [node name="CameraPivot" type="Node3D" parent="."]
@@ -207,5 +217,9 @@ offset_right = 56.0
 offset_bottom = 33.0
 label_settings = SubResource("LabelSettings_symyc")
 
-[connection signal="body_entered" from="cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
-[connection signal="body_exited" from="cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
+[node name="BoxDropOff" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[connection signal="body_entered" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
+[connection signal="body_exited" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]

@@ -26,6 +26,12 @@ var rarity: int = 200:
 		_model_updated.emit()
 
 
+@export
+var pickable: bool = true:
+	set(value):
+		pickable = value
+		_model_updated.emit()
+
 
 @export_group('private', '_')
 
@@ -77,6 +83,9 @@ func _ready() -> void:
 
 
 func _update_view() -> void:
+	price_label.visible = pickable
+	self.set_collision_layer_value(2, pickable)
+
 	label_label.text = label
 	price_label.text = '$%d' % price
 
@@ -95,6 +104,7 @@ func _update_view() -> void:
 
 
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	_set_hightlight_shader()
 
 
