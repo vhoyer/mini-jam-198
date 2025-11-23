@@ -70,6 +70,9 @@ func _physics_process(delta: float) -> void:
 			_closest_product = candidate
 			distance_to_closest_product = _closest_product.global_position.distance_squared_to(_hand_pos)
 
+		if Input.is_action_just_pressed('buy'):
+			SaveManager.data.receipt_items_push(_closest_product.product_dict)
+
 	## camera stuff
 	_camera_pivot.global_position = _camera_pivot.global_position.lerp(self.global_position, delta * 20.0)
 	_camera_pivot.transform = _camera_pivot.transform.interpolate_with(self.transform, delta * 2.5)

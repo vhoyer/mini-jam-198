@@ -26,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q6for")
+_receipt_item = ExtResource("2_s8n7j")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -36,13 +37,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -217.0
-offset_top = -87.0
+offset_top = -51.0
 offset_right = -1.0
-offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-rotation = 0.08726646
-pivot_offset = Vector2(0, 88)
+rotation = 0.04363323
+pivot_offset = Vector2(0, 51)
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8n7j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
@@ -61,7 +61,4 @@ theme_override_styles/separator = SubResource("StyleBoxLine_q6for")
 
 [node name="Items" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
-
-[node name="ReceiptItem" parent="PanelContainer/VBoxContainer/Items" instance=ExtResource("2_s8n7j")]
 layout_mode = 2

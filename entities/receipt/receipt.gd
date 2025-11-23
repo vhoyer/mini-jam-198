@@ -1,6 +1,8 @@
 extends Control
 
 @export_group('private', '_')
+
+@export
 var _receipt_item: PackedScene
 
 

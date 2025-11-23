@@ -30,4 +30,5 @@ var receipt_items: Array:
 ## item: { 'name': string, 'price': int, 'rarity': int }
 func receipt_items_push(item: Dictionary) -> void:
 	receipt_items_pushed.emit(item)
+	balance -= item.get('price', 0)
 	changed.emit('receipt_items')
