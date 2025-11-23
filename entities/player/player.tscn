@@ -163,7 +163,7 @@ skeleton = NodePath("../..")
 
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.030626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="CameraMain" type="Camera3D" parent="CameraPivot"]
 unique_name_in_owner = true
@@ -174,9 +174,9 @@ current = true
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9999998)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="DebugLayer" type="CanvasLayer" parent="."]
 
-[node name="Velocity" type="Label" parent="CanvasLayer"]
+[node name="Velocity" type="Label" parent="DebugLayer"]
 unique_name_in_owner = true
 offset_left = 16.0
 offset_top = 10.0

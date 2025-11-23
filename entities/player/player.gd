@@ -42,6 +42,9 @@ func _physics_process(delta: float) -> void:
 
 	look_at_pos = look_at_pos.lerp(camera_base_look_at.global_position + self.linear_velocity, delta * 5.0)
 	camera_main.look_at(look_at_pos)
+	camera_main.fov = lerp(75, 90, self.linear_velocity.length_squared() / 100)
 
+
+func _process(_delta: float) -> void:
 	## debug
 	velocity_label.text = '%.3f m/s' % [self.linear_velocity.length()]
