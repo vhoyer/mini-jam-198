@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmqv488a460ao"]
+[gd_scene load_steps=7 format=3 uid="uid://dmqv488a460ao"]
 
 [ext_resource type="Script" uid="uid://c0lpdpm0fc2l" path="res://entities/product/product.gd" id="1_eg8l8"]
+[ext_resource type="Material" uid="uid://hn6q8ca38b2k" path="res://assets/materials/highlight_material.tres" id="2_04ii2"]
 [ext_resource type="PackedScene" uid="uid://covbcvofw1nip" path="res://entities/product/models/default_box.glb" id="2_sf8nj"]
 [ext_resource type="PackedScene" uid="uid://d2b8cyu2ula5e" path="res://entities/product/models/common_box.glb" id="3_sim54"]
 [ext_resource type="PackedScene" uid="uid://dtwgqp063ik6a" path="res://entities/product/models/fancy_box.glb" id="4_i7akn"]
@@ -12,6 +13,7 @@ size = Vector3(0.55, 0.55, 0.55)
 collision_layer = 3
 script = ExtResource("1_eg8l8")
 price = 0
+_highlight_material = ExtResource("2_04ii2")
 _rarity1 = ExtResource("2_sf8nj")
 _rarity2 = ExtResource("3_sim54")
 _rarity3 = ExtResource("4_i7akn")
@@ -22,7 +24,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 
 [node name="Label" type="Label3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0.281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0193051, 0.281)
 pixel_size = 0.002
 shaded = true
 texture_filter = 0

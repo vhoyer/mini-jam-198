@@ -4,6 +4,9 @@ extends RigidBody3D
 
 signal _model_updated()
 
+
+static var current_selected: ProductBox = null
+
 @export
 var label: String = 'Incredible Product':
 	set(value):
@@ -27,6 +30,9 @@ var rarity: int = 200:
 @export_group('private', '_')
 
 @export
+var _highlight_material: Material
+
+@export
 var _rarity1: PackedScene
 
 @export
@@ -47,6 +53,10 @@ var price_label: Label3D = %Price
 var box_model_placement: Marker3D = %BoxModelPlacement
 
 
+var current_box: Node3D
+var current_box_meshs: Array
+
+
 func _ready() -> void:
 	_model_updated.connect(_update_view)
 	_model_updated.emit()
@@ -64,5 +74,22 @@ func _update_view() -> void:
 	else:
 		box_model = _rarity1
 
+	current_box = box_model.instantiate()
+	current_box_meshs = current_box.find_children('*', 'MeshInstance3D')
 	Util.remove_children(%BoxModelPlacement)
-	%BoxModelPlacement.add_child(box_model.instantiate())
+	%BoxModelPlacement.add_child(current_box)
+
+
+func _process(_delta: float) -> void:
+	_set_hightlight_shader()
+
+
+func _set_hightlight_shader() -> void:
+	if !current_box: return
+
+	var selected = self == ProductBox.current_selected
+
+	var new_material = _highlight_material if selected else null
+
+	for mesh: MeshInstance3D in current_box_meshs:
+		mesh.material_overlay = new_material

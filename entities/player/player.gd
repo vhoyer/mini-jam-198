@@ -35,7 +35,11 @@ var _velocity_label: Label = %Velocity
 var _look_from_pos: Vector3 = Vector3.ZERO
 var _look_at_pos: Vector3
 
-var _closest_product: ProductBox = null
+var _closest_product: ProductBox = null:
+	set(value):
+		_closest_product = value
+		ProductBox.current_selected = value
+
 var _products_in_range: Array = []
 var _hand_pos: Vector3:
 	get(): return _hands_reach_area.global_position
