@@ -9,20 +9,20 @@
 size = Vector3(0.55, 0.55, 0.55)
 
 [node name="Product" type="RigidBody3D"]
+collision_layer = 3
 script = ExtResource("1_eg8l8")
 price = 0
-rarity = 200
 _rarity1 = ExtResource("2_sf8nj")
 _rarity2 = ExtResource("3_sim54")
 _rarity3 = ExtResource("4_i7akn")
 
 [node name="BoxModelPlacement" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.275, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Label" type="Label3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0.281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0.281)
 pixel_size = 0.002
 shaded = true
 texture_filter = 0
@@ -32,11 +32,10 @@ width = 250.0
 
 [node name="Price" type="Label3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7651268, -0.008624017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49, -0.009)
 pixel_size = 0.002
 billboard = 1
 text = "$0"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
 shape = SubResource("BoxShape3D_gn0ls")

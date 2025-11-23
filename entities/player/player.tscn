@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqvxh5cs8dxxc"]
+[gd_scene load_steps=15 format=3 uid="uid://dqvxh5cs8dxxc"]
 
 [ext_resource type="Script" uid="uid://co5fbfk4p7661" path="res://entities/player/player.gd" id="1_symyc"]
 
@@ -37,6 +37,21 @@ albedo_color = Color(0.24939999, 0.29, 0.2832333, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_symyc"]
 material = SubResource("StandardMaterial3D_bls4j")
 size = Vector3(1, 0.9, 1.2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_symyc"]
+radius = 1.2
+
+[sub_resource type="Gradient" id="Gradient_symyc"]
+offsets = PackedFloat32Array(0.1, 0.1, 0.2, 0.2)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_abrql"]
+gradient = SubResource("Gradient_symyc")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_symyc"]
 font_size = 32
@@ -149,6 +164,10 @@ skeleton = NodePath("../../../WheelFrontRight")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.030626)
 mesh = SubResource("CapsuleMesh_sfv1e")
 
+[node name="LookingProductPosition" type="Marker3D" parent="MeshPerson"]
+unique_name_in_owner = true
+transform = Transform3D(1, 5.3290705e-15, 1.4210855e-14, 0, 0.9999998, 1.4901161e-08, 0, -1.4901161e-08, 0.9999998, 0, 1, 0.031)
+
 [node name="cart" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("BoxShape3D_symyc")
@@ -161,18 +180,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 mesh = SubResource("BoxMesh_symyc")
 skeleton = NodePath("../..")
 
+[node name="HandsReachArea3D" type="Area3D" parent="cart"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.1)
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cart/HandsReachArea3D"]
+shape = SubResource("SphereShape3D_symyc")
+
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="CameraMain" type="Camera3D" parent="CameraPivot"]
+[node name="BaseCameraPosition" type="Marker3D" parent="CameraPivot"]
 unique_name_in_owner = true
-transform = Transform3D(-1, -1.5180808e-08, 8.609463e-08, 0, 0.9848078, 0.1736482, -8.742278e-08, 0.1736482, -0.9848078, 0, 1.7600884, -3.1913817)
+transform = Transform3D(-1, -1.5180808e-08, 8.609463e-08, 0, 0.9848078, 0.1736482, -8.742278e-08, 0.1736482, -0.9848078, 0, 1.7600884, -3.1913815)
+
+[node name="CameraMain" type="Camera3D" parent="CameraPivot/BaseCameraPosition"]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.7763568e-15, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 current = true
+fov = 90.0
 
 [node name="BaseCameraLookAt" type="Marker3D" parent="CameraPivot"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9999998)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_abrql")
 
 [node name="DebugLayer" type="CanvasLayer" parent="."]
 
@@ -183,3 +231,6 @@ offset_top = 10.0
 offset_right = 56.0
 offset_bottom = 33.0
 label_settings = SubResource("LabelSettings_symyc")
+
+[connection signal="body_entered" from="cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
+[connection signal="body_exited" from="cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]

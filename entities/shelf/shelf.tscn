@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://g060fgm2sv78" path="res://entities/shelf/models/shelf.glb" id="3_xkcyi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c80nb"]
-size = Vector3(1.18, 1.0289001, 0.6)
+size = Vector3(1.18, 1.0173798, 0.64633787)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xkcyi"]
 size = Vector3(1.18, 2.002243, 0.047070324)
@@ -21,7 +21,7 @@ transform = Transform3D(-1.0927846e-09, 0, -0.5900021, 0, 1, 0, 0.025, 0, -2.578
 transform = Transform3D(39.999996, 0, 0, 0, 1, 0, 0, 0, 1.694909, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5144501, 0.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5086899, 0.32316893)
 shape = SubResource("BoxShape3D_c80nb")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
@@ -30,6 +30,6 @@ shape = SubResource("BoxShape3D_xkcyi")
 
 [node name="ProductPlace" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0743737, 0.5602363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.375, 0.35)
 
 [editable path="ModelPosition/shelf"]
