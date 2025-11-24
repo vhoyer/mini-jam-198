@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=17 format=3 uid="uid://bikle0m56vgy0"]
 
 [ext_resource type="AudioStream" uid="uid://bjhw2xnhe17gr" path="res://assets/bgm/Evening lunch rush.mp3" id="1_3oq6v"]
 [ext_resource type="Script" uid="uid://cbq4px2t2oh2l" path="res://stages/prototype/prototype.gd" id="1_4cw7t"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://2ute5uskkcon" path="res://entities/light/light.tscn" id="7_8lktr"]
 [ext_resource type="PackedScene" uid="uid://y47ytkva22l4" path="res://entities/menu_pause/menu_pause.tscn" id="7_dk6v8"]
 [ext_resource type="PackedScene" uid="uid://5gtc0e4n0l5k" path="res://entities/cutout/cutout.tscn" id="8_5la2h"]
+[ext_resource type="PackedScene" uid="uid://c33evhovhre51" path="res://entities/menu_next_department/menu_next_department.tscn" id="8_k42ll"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erxa5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,6 +47,8 @@ metadata/_custom_type_script = "uid://mpygmma5f53t"
 [node name="HudPrompts" parent="." instance=ExtResource("3_65t83")]
 
 [node name="MenuPause" parent="." instance=ExtResource("7_dk6v8")]
+
+[node name="MenuNextDepartment" parent="." instance=ExtResource("8_k42ll")]
 
 [node name="StoreInterior" parent="." instance=ExtResource("4_5la2h")]
 

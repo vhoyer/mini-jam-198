@@ -7,8 +7,10 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed('pause'):
-		get_tree().paused = true
-		self.show()
+		var tree = get_tree()
+		if not tree.paused:
+			tree.paused = true
+			self.show()
 
 
 
