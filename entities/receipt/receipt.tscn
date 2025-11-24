@@ -74,5 +74,6 @@ bus = &"SFX"
 [node name="Print" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_4vcfl")
+volume_db = 8.0
 max_polyphony = 6
 bus = &"SFX"

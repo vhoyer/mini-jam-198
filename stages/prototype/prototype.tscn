@@ -30,6 +30,7 @@ environment = SubResource("Environment_5kwao")
 
 [node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_3oq6v")
+volume_db = -5.0
 bus = &"BGM"
 parameters/looping = true
 script = ExtResource("2_4cw7t")

@@ -26,6 +26,8 @@ var _base_camera_position: Marker3D = %BaseCameraPosition
 @onready
 var _box_drop_off: Marker3D = %BoxDropOff
 
+@onready
+var kitty: Node3D = %Kitty
 
 @onready
 var bump: AudioStreamPlayer3D = %Bump
@@ -54,6 +56,8 @@ var _hand_pos: Vector3:
 
 var _recent_collisions: Array = []
 
+var kitty_animation_player: AnimationPlayer
+
 
 func _ready() -> void:
 	center_of_mass = _center_of_mass_marker.position
@@ -62,11 +66,17 @@ func _ready() -> void:
 	_camera_pivot.top_level = true
 	_look_at_pos = _camera_base_look_at.global_position
 
+	kitty_animation_player = kitty.get_node(^'AnimationPlayer')
+	kitty_animation_player.current_animation = 'Forward'
+
 
 func _physics_process(delta: float) -> void:
 	## car move stuff
 	steering = move_toward(steering, Input.get_axis('right', 'left') * MAX_STEER, delta * 2.5)
 	engine_force = Input.get_axis('backward', 'forward') * ENGINE_POWER
+
+	## animation logic
+	kitty_animation_player.speed_scale = (self.linear_velocity.length() * 0.1)
 
 	## sound playing logic
 	var colliding_bodies:= self.get_colliding_bodies()
