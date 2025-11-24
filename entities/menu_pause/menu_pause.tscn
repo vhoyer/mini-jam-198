@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://y47ytkva22l4"]
+
+[ext_resource type="Script" uid="uid://brqoj333ljl4s" path="res://entities/menu_pause/menu_pause.gd" id="1_6t313"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="1_r8ibe"]
+[ext_resource type="PackedScene" uid="uid://dojtdweambavs" path="res://entities/menu_options/menu_options.tscn" id="2_elyif"]
+[ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_show.gd" id="3_8bbfg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t313"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.22745098)
+corner_detail = 5
+
+[node name="MenuPause" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6t313")
+script = ExtResource("1_6t313")
+
+[node name="MenuPause" type="CenterContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="HBoxContainer" parent="MenuPause"]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+theme_override_constants/separation = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuPause/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPause/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPause/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MenuPause/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+
+[node name="Resume" type="Button" parent="MenuPause/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="MenuPause/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resume"]
+script = ExtResource("1_r8ibe")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
+
+[node name="Button" type="Button" parent="MenuPause/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("panel")]
+layout_mode = 2
+text = "Options
+"
+script = ExtResource("3_8bbfg")
+panel = NodePath("../../../../MenuOptions")
+toggle_behavior = true
+
+[node name="MainMenu" type="Button" parent="MenuPause/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="MenuOptions" parent="MenuPause/MarginContainer" instance=ExtResource("2_elyif")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="MenuPause/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuPause/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

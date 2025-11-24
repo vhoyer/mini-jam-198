@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=16 format=3 uid="uid://bikle0m56vgy0"]
 
 [ext_resource type="AudioStream" uid="uid://bjhw2xnhe17gr" path="res://assets/bgm/Evening lunch rush.mp3" id="1_3oq6v"]
 [ext_resource type="Script" uid="uid://cbq4px2t2oh2l" path="res://stages/prototype/prototype.gd" id="1_4cw7t"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b5hpc674k7ita" path="res://entities/hud_prompts/hud_prompts.tscn" id="3_65t83"]
 [ext_resource type="PackedScene" uid="uid://dibnoifmle2m4" path="res://entities/store_interior/store_interior.tscn" id="4_5la2h"]
 [ext_resource type="PackedScene" uid="uid://2ute5uskkcon" path="res://entities/light/light.tscn" id="7_8lktr"]
+[ext_resource type="PackedScene" uid="uid://y47ytkva22l4" path="res://entities/menu_pause/menu_pause.tscn" id="7_dk6v8"]
 [ext_resource type="PackedScene" uid="uid://5gtc0e4n0l5k" path="res://entities/cutout/cutout.tscn" id="8_5la2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erxa5"]
@@ -43,6 +44,8 @@ metadata/_custom_type_script = "uid://mpygmma5f53t"
 [node name="Receipt" parent="." instance=ExtResource("2_65t83")]
 
 [node name="HudPrompts" parent="." instance=ExtResource("3_65t83")]
+
+[node name="MenuPause" parent="." instance=ExtResource("7_dk6v8")]
 
 [node name="StoreInterior" parent="." instance=ExtResource("4_5la2h")]
 

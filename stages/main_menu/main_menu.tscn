@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyj3mskldd4wg"]
+[gd_scene load_steps=9 format=3 uid="uid://cyj3mskldd4wg"]
 
 [ext_resource type="AudioStream" uid="uid://bjhw2xnhe17gr" path="res://assets/bgm/Evening lunch rush.mp3" id="1_jofpu"]
 [ext_resource type="Script" uid="uid://dxrc4vpfkepfc" path="res://stages/main_menu/label.gd" id="1_owbi8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/StageManager/stage_changer_base_button.gd" id="2_wxx16"]
 [ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_show.gd" id="3_wyd67"]
 [ext_resource type="PackedScene" uid="uid://dojtdweambavs" path="res://entities/menu_options/menu_options.tscn" id="4_7wn7o"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="5_mcab4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wyd67"]
 font_size = 32
@@ -61,6 +62,10 @@ layout_mode = 2
 text = "Start Game"
 script = ExtResource("2_wxx16")
 scene_file = "uid://bikle0m56vgy0"
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/ButtonStart"]
+script = ExtResource("5_mcab4")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="ButtonPanelShow" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("panel")]
 layout_mode = 2
