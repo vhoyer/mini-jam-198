@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5hpc674k7ita"]
+[gd_scene load_steps=8 format=3 uid="uid://b5hpc674k7ita"]
 
 [ext_resource type="Script" uid="uid://dkv06tio8q5t0" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="1_7u5ra"]
 [ext_resource type="Script" uid="uid://b36y2txgoyi4q" path="res://entities/hud_prompts/buy_action.gd" id="1_jsmn4"]
 [ext_resource type="LabelSettings" uid="uid://c2qka2gpqh64b" path="res://entities/hud_prompts/hud_prompts_label.tres" id="3_yvahm"]
+[ext_resource type="Script" uid="uid://bqmxrhxdjbk1c" path="res://entities/hud_prompts/membership_progress.gd" id="4_vrp7p"]
 
 [sub_resource type="Texture2D" id="Texture2D_jsmn4"]
 resource_local_to_scene = false
@@ -79,6 +80,7 @@ offset_right = -297.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_type_variation = &"MarginContainerMedium"
+script = ExtResource("4_vrp7p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MembershipProgress"]
 layout_mode = 2
@@ -91,10 +93,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy more to unlock next department"
 
-[node name="Label2" type="Label" parent="MembershipProgress/VBoxContainer/HBoxContainer"]
+[node name="CurrentDep" type="Label" parent="MembershipProgress/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 text = "current: %s"
 
-[node name="ProgressBar" type="ProgressBar" parent="MembershipProgress/VBoxContainer"]
+[node name="MembershipProgress" type="ProgressBar" parent="MembershipProgress/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Label3" type="Label" parent="MembershipProgress/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Membership Level"
+horizontal_alignment = 1

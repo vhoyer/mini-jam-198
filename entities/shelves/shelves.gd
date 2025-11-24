@@ -35,6 +35,8 @@ var product_gen: ProductGen
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	section = SaveManager.data.current_department
+
 	shelves = self.find_children('*', 'Shelf')
 	product_gen = ProductGen.new(product_list_csv, product_adjectives_csv, product_color_csv)
 

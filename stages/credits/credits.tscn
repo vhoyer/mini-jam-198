@@ -26,6 +26,7 @@ next_scene = "uid://cyj3mskldd4wg"
 
 [node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_71y72")
+volume_db = -5.0
 bus = &"BGM"
 parameters/looping = true
 script = ExtResource("3_y37aw")

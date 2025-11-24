@@ -8,10 +8,18 @@ signal receipt_items_pushed(item: Dictionary)
 var current_department: String:
 	get():
 		## holy fucking shit, Elon musk has so much money
-		return _short_term.get_item('current_department', 'House')
-	set(value):
-		_short_term.set_item('current_department', value)
-		changed.emit('current_department')
+		return ProductGen.sections.get(_short_term.get_item('current_department', 0))
+
+var current_limit: int:
+	get():
+		## holy fucking shit, Elon musk has so much money
+		return ProductGen.limits.get(_short_term.get_item('current_department', 0))
+
+func next_department() -> void:
+	var current_index: int = _short_term.get_item('current_department', 0)
+	_short_term.set_item('current_department', current_index + 1)
+	changed.emit('current_department')
+	changed.emit('current_limit')
 
 
 var selected_product: Dictionary:
@@ -23,13 +31,19 @@ var selected_product: Dictionary:
 		changed.emit('selected_product')
 
 
+## holy fucking shit, Elon musk has so much money
+const MAX_MONEY = 491_411_972_173
+
 var balance: int:
 	get():
-		## holy fucking shit, Elon musk has so much money
-		return _short_term.get_item('balance', 491_411_972_173)
+		return _short_term.get_item('balance', MAX_MONEY)
 	set(value):
 		_short_term.set_item('balance', value)
 		changed.emit('balance')
+
+
+var spent: int:
+	get(): return MAX_MONEY - balance
 
 
 var receipt_items: Array:

@@ -10,8 +10,16 @@ const sections = [
 	'House',
 	'Travel',
 	'Real State',
-	'Investiments',
 	'Territories',
+	'Investiments',
+]
+
+const limits = [
+	60000,
+	120000,
+	50000000,
+	150000000,
+	3800000000,
 ]
 
 var products_sum: Dictionary[String, int] = {}
