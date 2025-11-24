@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Y So Much"
+config/name="YMart"
 config/description="No Description"
 config/tags=PackedStringArray("veshworks")
 run/main_scene="uid://cyj3mskldd4wg"
@@ -29,6 +29,10 @@ ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 gdscript/warnings/unused_signal=0
 gdscript/warnings/shadowed_variable=0
 gdscript/warnings/shadowed_global_identifier=2
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

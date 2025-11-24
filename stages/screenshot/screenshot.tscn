@@ -1,0 +1,309 @@
+[gd_scene load_steps=23 format=3 uid="uid://bs4kqj6klcjpv"]
+
+[ext_resource type="Script" uid="uid://gc4xt27uyrbm" path="res://stages/screenshot/screenshot.gd" id="1_dpk7s"]
+[ext_resource type="PackedScene" uid="uid://d04j1v7m06io2" path="res://assets/3D/Building.glb" id="1_ffs8n"]
+[ext_resource type="PackedScene" uid="uid://b6ryvxcjxrs4n" path="res://entities/player/models/Kitty.glb" id="4_fpn6f"]
+[ext_resource type="Shape3D" uid="uid://c58mdn40nckky" path="res://entities/player/models/cart_concave_shape.tres" id="5_2rt1o"]
+[ext_resource type="PackedScene" uid="uid://xu0iswyhaefc" path="res://entities/player/models/Cart.glb" id="6_gwrra"]
+[ext_resource type="AudioStream" uid="uid://dpxgfoosdlp7g" path="res://entities/player/sfx/cart_bump/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday1.ogg" id="7_pcq5d"]
+[ext_resource type="AudioStream" uid="uid://b7nsfup5hgjvp" path="res://entities/player/sfx/cart_bump/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday2.ogg" id="8_pvi2g"]
+[ext_resource type="AudioStream" uid="uid://go13o42jkj1w" path="res://entities/player/sfx/cart_moving/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday.ogg" id="9_mw4kc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ffs8n"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dpk7s"]
+sky_material = SubResource("ProceduralSkyMaterial_ffs8n")
+
+[sub_resource type="Environment" id="Environment_lm8mw"]
+background_mode = 2
+sky = SubResource("Sky_dpk7s")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symyc"]
+albedo_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_abrql"]
+material = SubResource("StandardMaterial3D_symyc")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sglur"]
+albedo_color = Color(0.91228896, 0.9122889, 0.91228884, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bls4j"]
+material = SubResource("StandardMaterial3D_sglur")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.07
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abrql"]
+albedo_color = Color(0.58735806, 0.48626548, 0.36695486, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sfv1e"]
+material = SubResource("StandardMaterial3D_abrql")
+radius = 0.3
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bls4j"]
+size = Vector3(1, 0.077697754, 1.6552734)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_symyc"]
+radius = 1.3
+
+[sub_resource type="LabelSettings" id="LabelSettings_symyc"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_26q78"]
+random_pitch = 1.08
+streams_count = 2
+stream_0/stream = ExtResource("7_pcq5d")
+stream_1/stream = ExtResource("8_pvi2g")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8uhqm"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_dpk7s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lm8mw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Building" parent="." instance=ExtResource("1_ffs8n")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.9607259, 0, 0.2774991, 0, 1, -8.881784e-16, -0.2774991, 0, 0.9607259, 19.55495, 0.36054707, -4.5112777)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(-4.371139e-08, 0.15126084, 0.9884938, 0, 0.9884938, -0.15126084, -1, -6.6118213e-09, -4.3208434e-08, 0, 0.027212381, 0)
+
+[node name="Player" type="VehicleBody3D" parent="."]
+transform = Transform3D(-0.33525428, 0, -0.9421277, 0, 1, 0, 0.9421277, 0, -0.33525428, 14.93873, 0, 0.22814116)
+mass = 100.0
+gravity_scale = 3.0
+center_of_mass_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 0.25
+angular_damp = 0.8
+
+[node name="WheelFrontRight" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.1, 0.5)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.1
+wheel_friction_slip = 1.4
+suspension_stiffness = 1000.0
+suspension_max_force = 10000.0
+damping_compression = 15.0
+damping_relaxation = 15.0
+
+[node name="wheel" type="Node3D" parent="Player/WheelFrontRight"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelFrontRight/wheel"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_abrql")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player/WheelFrontRight/wheel"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bls4j")
+skeleton = NodePath("../..")
+
+[node name="WheelFrontLeft" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.1, 0.5)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.1
+wheel_friction_slip = 1.4
+suspension_stiffness = 1000.0
+suspension_max_force = 10000.0
+damping_compression = 15.0
+damping_relaxation = 15.0
+
+[node name="wheel2" type="Node3D" parent="Player/WheelFrontLeft"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelFrontLeft/wheel2"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_abrql")
+skeleton = NodePath("../../../WheelFrontRight")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player/WheelFrontLeft/wheel2"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bls4j")
+skeleton = NodePath("../../../WheelFrontRight")
+
+[node name="WheelBackRight" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.1, -0.5268518)
+use_as_traction = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.1
+wheel_friction_slip = 1.1
+suspension_stiffness = 1000.0
+suspension_max_force = 10000.0
+damping_compression = 15.0
+damping_relaxation = 15.0
+
+[node name="wheel3" type="Node3D" parent="Player/WheelBackRight"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelBackRight/wheel3"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_abrql")
+skeleton = NodePath("../../../WheelFrontRight")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player/WheelBackRight/wheel3"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bls4j")
+skeleton = NodePath("../../../WheelFrontRight")
+
+[node name="WheelBackLeft" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.1, -0.5268518)
+use_as_traction = true
+wheel_roll_influence = 0.01
+wheel_radius = 0.1
+wheel_friction_slip = 1.1
+suspension_stiffness = 1000.0
+suspension_max_force = 10000.0
+damping_compression = 15.0
+damping_relaxation = 15.0
+
+[node name="wheel4" type="Node3D" parent="Player/WheelBackLeft"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelBackLeft/wheel4"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_abrql")
+skeleton = NodePath("../../../WheelFrontRight")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player/WheelBackLeft/wheel4"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bls4j")
+skeleton = NodePath("../../../WheelFrontRight")
+
+[node name="Kitty" parent="Player" instance=ExtResource("4_fpn6f")]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.031)
+
+[node name="Skeleton3D" parent="Player/Kitty/Armature" index="0"]
+bones/0/position = Vector3(-0.005884331, 0.18927005, 0.023796624)
+bones/0/rotation = Quaternion(-0.021396821, 0.9917233, -0.12386409, 0.026170276)
+bones/1/rotation = Quaternion(-0.16319214, 0.007261882, -0.0006271348, 0.9865674)
+bones/2/rotation = Quaternion(0.10066421, 0.031410933, -0.0007257243, 0.9944243)
+bones/3/rotation = Quaternion(-0.120360464, -0.0026189296, 0.025613274, 0.99239635)
+bones/10/rotation = Quaternion(0.54293984, 0.033153802, 0.36908752, 0.7535858)
+bones/11/rotation = Quaternion(0.10195435, -0.0021906442, -0.022123413, 0.99454063)
+bones/13/rotation = Quaternion(0.5240345, -0.13481417, -0.3305194, 0.77328515)
+bones/14/rotation = Quaternion(0.098340176, 0.006782281, 0.008853428, 0.99509037)
+bones/15/rotation = Quaternion(-0.004041304, 0.15932924, 0.9867835, -0.02925961)
+bones/16/rotation = Quaternion(-0.5972027, -0.0007126258, 0.004385547, 0.80207807)
+bones/17/rotation = Quaternion(0.95817745, -0.018253176, -0.03904992, 0.2829098)
+bones/18/rotation = Quaternion(-0.52811724, 0.009551395, -0.009963427, 0.8490594)
+bones/19/rotation = Quaternion(0.41273004, 0.053369112, -0.06417445, 0.9070211)
+bones/19/scale = Vector3(1.0000004, 1.0000002, 1)
+bones/20/rotation = Quaternion(0.090985216, 0.0063005663, -0.0041291723, 0.9958238)
+bones/20/scale = Vector3(1.0000005, 1.0000005, 1.0000002)
+bones/21/rotation = Quaternion(-0.2934826, 0.026381372, 0.11008232, 0.9492386)
+bones/22/rotation = Quaternion(-0.32221895, 0.02980808, 0.10782748, 0.94003177)
+bones/23/rotation = Quaternion(-0.014591265, 0.9222458, -0.3862685, -0.0068283984)
+bones/25/rotation = Quaternion(0.0036870113, 0.07893481, 0.9960835, -0.039666243)
+bones/26/rotation = Quaternion(-0.0024358092, 0.0008885277, -1.7900602e-05, 0.9999967)
+bones/27/rotation = Quaternion(0.6374331, -0.021057457, 0.02984359, 0.76963955)
+
+[node name="LookingProductPosition" type="Marker3D" parent="Player/Kitty"]
+unique_name_in_owner = true
+transform = Transform3D(-1, -6.6317716e-15, 8.742275e-08, 0, 0.9999998, 1.4901161e-08, -8.742278e-08, 1.4901161e-08, -0.9999998, 0, 1.7, -0.031)
+
+[node name="MeshPerson" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.030626)
+visible = false
+mesh = SubResource("CapsuleMesh_sfv1e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31118774, 0.32763672)
+shape = SubResource("BoxShape3D_bls4j")
+
+[node name="Cart" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = ExtResource("5_2rt1o")
+
+[node name="CenterOfMass" type="Marker3D" parent="Player/Cart"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+
+[node name="HandsReachArea3D" type="Area3D" parent="Player/Cart"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.1)
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Cart/HandsReachArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35122263)
+visible = false
+shape = SubResource("SphereShape3D_symyc")
+
+[node name="Cart" parent="Player/Cart" instance=ExtResource("6_gwrra")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.051015615, 0.30758107)
+
+[node name="CameraPivot" type="Node3D" parent="Player"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="BaseCameraPosition" type="Marker3D" parent="Player/CameraPivot"]
+unique_name_in_owner = true
+transform = Transform3D(-1, -1.5180808e-08, 8.609463e-08, 0, 0.9848078, 0.1736482, -8.742278e-08, 0.1736482, -0.9848078, 0, 1.7600884, -3.1913815)
+
+[node name="BaseCameraLookAt" type="Marker3D" parent="Player/CameraPivot"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9999998)
+
+[node name="DebugLayer" type="CanvasLayer" parent="Player"]
+visible = false
+
+[node name="Velocity" type="Label" parent="Player/DebugLayer"]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 33.0
+label_settings = SubResource("LabelSettings_symyc")
+
+[node name="BoxDropOff" type="Marker3D" parent="Player"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.5148661)
+
+[node name="Bump" type="AudioStreamPlayer3D" parent="Player"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34995282, 0.5359477)
+stream = SubResource("AudioStreamRandomizer_26q78")
+max_polyphony = 6
+bus = &"Cart"
+
+[node name="Wheels" type="AudioStreamPlayer3D" parent="Player"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34995282, 0.5359477)
+stream = ExtResource("9_mw4kc")
+autoplay = true
+max_polyphony = 6
+bus = &"SFX"
+
+[node name="Floor2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 18.039436, -0.22839582, 0)
+
+[node name="CollisionShapeFloor" type="CollisionShape3D" parent="Floor2"]
+shape = SubResource("WorldBoundaryShape3D_8uhqm")
+
+[connection signal="body_entered" from="Player/Cart/HandsReachArea3D" to="Player" method="_on_hands_reach_area_3d_body_entered_or_exited"]
+[connection signal="body_exited" from="Player/Cart/HandsReachArea3D" to="Player" method="_on_hands_reach_area_3d_body_entered_or_exited"]
+
+[editable path="Player/Kitty"]
