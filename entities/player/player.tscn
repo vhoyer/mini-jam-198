@@ -1,6 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://dqvxh5cs8dxxc"]
+[gd_scene load_steps=14 format=3 uid="uid://dqvxh5cs8dxxc"]
 
 [ext_resource type="Script" uid="uid://co5fbfk4p7661" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="PackedScene" uid="uid://b6ryvxcjxrs4n" path="res://entities/player/models/Kitty.glb" id="2_sglur"]
+[ext_resource type="PackedScene" uid="uid://xu0iswyhaefc" path="res://entities/player/models/Cart.glb" id="3_bls4j"]
+[ext_resource type="Shape3D" uid="uid://c58mdn40nckky" path="res://entities/player/models/cart_concave_shape.tres" id="3_fkugw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symyc"]
 albedo_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
@@ -28,26 +31,11 @@ material = SubResource("StandardMaterial3D_abrql")
 radius = 0.3
 height = 1.0
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_symyc"]
-data = PackedVector3Array(-0.5, -0.45, -0.59999996, -0.5, 0.45, -0.59999996, -0.5, -0.45, 0.59999996, -0.5, -0.45, -0.59999996, -0.5, -0.45, 0.59999996, 0.5, -0.45, -0.59999996, -0.5, -0.45, -0.59999996, 0.5, -0.45, -0.59999996, -0.5, 0.45, -0.59999996, -0.5, 0.45, -0.59999996, -0.4479, 0.45, -0.5467, -0.5, 0.45, 0.59999996, -0.5, 0.45, -0.59999996, 0.5, 0.45, -0.59999996, -0.4479, 0.45, -0.5467, -0.5, -0.45, 0.59999996, -0.5, 0.45, -0.59999996, -0.5, 0.45, 0.59999996, -0.5, 0.45, 0.59999996, -0.4479, 0.45, -0.5467, -0.4479, 0.45, 0.55329996, -0.5, -0.45, 0.59999996, -0.5, 0.45, 0.59999996, 0.5, 0.45, 0.59999996, -0.5, 0.45, 0.59999996, -0.4479, 0.45, 0.55329996, 0.45209998, 0.45, 0.55329996, -0.5, -0.45, 0.59999996, 0.5, -0.45, 0.59999996, 0.5, -0.45, -0.59999996, -0.5, -0.45, 0.59999996, 0.5, 0.45, 0.59999996, 0.5, -0.45, 0.59999996, 0.5, -0.45, -0.59999996, 0.5, -0.45, 0.59999996, 0.5, 0.45, 0.59999996, -0.5, 0.45, -0.59999996, 0.5, -0.45, -0.59999996, 0.5, 0.45, -0.59999996, 0.5, 0.45, -0.59999996, 0.45209998, 0.45, -0.5467, -0.4479, 0.45, -0.5467, 0.5, -0.45, -0.59999996, 0.5, 0.45, 0.59999996, 0.5, 0.45, -0.59999996, 0.5, 0.45, -0.59999996, 0.45209998, 0.45, 0.55329996, 0.45209998, 0.45, -0.5467, -0.5, 0.45, 0.59999996, 0.45209998, 0.45, 0.55329996, 0.5, 0.45, 0.59999996, 0.5, 0.45, -0.59999996, 0.5, 0.45, 0.59999996, 0.45209998, 0.45, 0.55329996, -0.4479, -0.3963, -0.5467, -0.4479, -0.3963, 0.55329996, -0.4479, 0.45, -0.5467, -0.4479, -0.3963, -0.5467, 0.45209998, -0.3963, -0.5467, -0.4479, -0.3963, 0.55329996, -0.4479, -0.3963, 0.55329996, 0.45209998, -0.3963, 0.55329996, -0.4479, 0.45, 0.55329996, -0.4479, -0.3963, -0.5467, -0.4479, 0.45, -0.5467, 0.45209998, 0.45, -0.5467, -0.4479, -0.3963, 0.55329996, -0.4479, 0.45, 0.55329996, -0.4479, 0.45, -0.5467, -0.4479, -0.3963, -0.5467, 0.45209998, 0.45, -0.5467, 0.45209998, -0.3963, -0.5467, -0.4479, -0.3963, 0.55329996, 0.45209998, -0.3963, -0.5467, 0.45209998, -0.3963, 0.55329996, 0.45209998, -0.3963, -0.5467, 0.45209998, 0.45, 0.55329996, 0.45209998, -0.3963, 0.55329996, 0.45209998, -0.3963, -0.5467, 0.45209998, 0.45, -0.5467, 0.45209998, 0.45, 0.55329996, 0.45209998, -0.3963, 0.55329996, 0.45209998, 0.45, 0.55329996, -0.4479, 0.45, 0.55329996)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bls4j"]
-albedo_color = Color(0.24939999, 0.29, 0.2832333, 1)
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_sglur"]
-_surfaces = [{
-"aabb": AABB(-0.5, -0.45, -0.6, 1, 0.9, 1.2),
-"attribute_data": PackedByteArray("AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8Ao3Q/M6tyPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAACjdD8zq3I/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8Ao3Q/M6tyP1iFHz0zq3I/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAgD9YhR89M6tyP1iFHz3QTEQ9AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAo3Q/0ExEPQCjdD8zq3I/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAABYhR890ExEPQCjdD/QTEQ9AAAAAAAAgD9YhR890ExEPQAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAFiFHz3QTEQ9AACAPwAAAAAAAIA/AACAP8hxdD0AAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAgD/IcXQ9AACAPwAAAAAAAIA/5LhwPwAAAADkuHA/AACAPwAAgD/IcXQ9AACAP8hxdD0AAAAAAACAPwAAAAAAAAAA5LhwPwAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAgD/IcXQ9AAAAAAAAgD8AAAAAAACAPwAAgD/IcXQ9AACAP8hxdD0AAAAAAAAAAAAAgD8AAAAAyHF0PQAAgD/IcXQ9"),
-"format": 34359738391,
-"material": SubResource("StandardMaterial3D_bls4j"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 84,
-"vertex_data": PackedByteArray("AAAAv2Zm5r6amRm/AAAAv2Zm5j6amRm/AAAAv2Zm5r6amRk/AAAAv2Zm5r6amRm/AAAAv2Zm5r6amRk/AAAAP2Zm5r6amRm/AAAAv2Zm5r6amRm/AAAAP2Zm5r6amRm/AAAAv2Zm5j6amRm/AAAAv2Zm5j6amRm/ZlblvmZm5j7N9gu/AAAAv2Zm5j6amRk/AAAAv2Zm5j6amRm/AAAAP2Zm5j6amRm/ZlblvmZm5j7N9gu/AAAAv2Zm5r6amRk/AAAAv2Zm5j6amRm/AAAAv2Zm5j6amRk/AAAAv2Zm5j6amRk/ZlblvmZm5j7N9gu/ZlblvmZm5j7Nog0/AAAAv2Zm5r6amRk/AAAAv2Zm5j6amRk/AAAAP2Zm5j6amRk/AAAAv2Zm5j6amRk/ZlblvmZm5j7Nog0/ZnbnPmZm5j7Nog0/AAAAv2Zm5r6amRk/AAAAP2Zm5r6amRk/AAAAP2Zm5r6amRm/AAAAv2Zm5r6amRk/AAAAP2Zm5j6amRk/AAAAP2Zm5r6amRk/AAAAP2Zm5r6amRm/AAAAP2Zm5r6amRk/AAAAP2Zm5j6amRk/AAAAv2Zm5j6amRm/AAAAP2Zm5r6amRm/AAAAP2Zm5j6amRm/AAAAP2Zm5j6amRm/ZnbnPmZm5j7N9gu/ZlblvmZm5j7N9gu/AAAAP2Zm5r6amRm/AAAAP2Zm5j6amRk/AAAAP2Zm5j6amRm/AAAAP2Zm5j6amRm/ZnbnPmZm5j7Nog0/ZnbnPmZm5j7N9gu/AAAAv2Zm5j6amRk/ZnbnPmZm5j7Nog0/AAAAP2Zm5j6amRk/AAAAP2Zm5j6amRm/AAAAP2Zm5j6amRk/ZnbnPmZm5j7Nog0/Zlblvmbmyr7N9gu/Zlblvmbmyr7Nog0/ZlblvmZm5j7N9gu/Zlblvmbmyr7N9gu/ZnbnPmbmyr7N9gu/Zlblvmbmyr7Nog0/Zlblvmbmyr7Nog0/ZnbnPmbmyr7Nog0/ZlblvmZm5j7Nog0/Zlblvmbmyr7N9gu/ZlblvmZm5j7N9gu/ZnbnPmZm5j7N9gu/Zlblvmbmyr7Nog0/ZlblvmZm5j7Nog0/ZlblvmZm5j7N9gu/Zlblvmbmyr7N9gu/ZnbnPmZm5j7N9gu/ZnbnPmbmyr7N9gu/Zlblvmbmyr7Nog0/ZnbnPmbmyr7N9gu/ZnbnPmbmyr7Nog0/ZnbnPmbmyr7N9gu/ZnbnPmZm5j7Nog0/ZnbnPmbmyr7Nog0/ZnbnPmbmyr7N9gu/ZnbnPmZm5j7N9gu/ZnbnPmZm5j7Nog0/ZnbnPmbmyr7Nog0/ZnbnPmZm5j7Nog0/ZlblvmZm5j7Nog0/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//////AAD/f/////8AAP9//////wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA////f/9/AID///9//38AgP///3//fwCA/3//////////f/////////9//////////////wAA/7//////AAD/v/////8AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/////f/9/AID///9//38AgP///3//fwCA/3//fwAA/7//f/9/AAD/v/9//38AAP+//3//////////f/////////9/////////AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////wAA/7//////AAD/v/////8AAP+/")
-}]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bls4j"]
+size = Vector3(1, 0.077697754, 1.6552734)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_symyc"]
-radius = 1.2
+radius = 1.3
 
 [sub_resource type="LabelSettings" id="LabelSettings_symyc"]
 font_size = 32
@@ -156,27 +144,50 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 mesh = SubResource("CylinderMesh_bls4j")
 skeleton = NodePath("../../../WheelFrontRight")
 
+[node name="Kitty" parent="." instance=ExtResource("2_sglur")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.031)
+
+[node name="Skeleton3D" parent="Kitty/Armature" index="0"]
+bones/0/position = Vector3(-1.2764779e-15, 0.16544999, 0.023903767)
+bones/0/rotation = Quaternion(7.5339734e-09, 0.99500847, -0.099790506, -7.512105e-08)
+bones/10/rotation = Quaternion(0.50781244, 0.12254691, 0.35552454, 0.7750555)
+bones/13/rotation = Quaternion(0.5509854, -0.14089794, -0.3272658, 0.75462574)
+bones/15/rotation = Quaternion(-0.0019309488, 0.23584895, 0.9717325, 0.010370217)
+bones/16/rotation = Quaternion(-0.52136093, -0.0007581602, 0.0038286038, 0.8533273)
+bones/17/rotation = Quaternion(0.9026041, -0.008937607, -0.019609487, 0.42993185)
+bones/18/rotation = Quaternion(-0.52841187, -6.4096824e-08, -3.989399e-08, 0.84898823)
+bones/19/rotation = Quaternion(0.3763472, 9.947598e-14, -1.044928e-13, 0.92647874)
+bones/20/rotation = Quaternion(0.11594801, -3.1086236e-15, -5.9679467e-17, 0.9932553)
+bones/20/scale = Vector3(0.9999993, 0.9999997, 0.99999976)
+bones/21/rotation = Quaternion(-0.2317172, 3.7303494e-14, -2.0427477e-14, 0.97278327)
+bones/22/rotation = Quaternion(-0.2610659, 6.17284e-13, 9.0916163e-13, 0.965321)
+bones/22/scale = Vector3(0.9999377, 0.9999445, 0.9999935)
+bones/23/rotation = Quaternion(-9.423082e-08, 0.90865, -0.41755882, 2.8538935e-07)
+bones/23/scale = Vector3(1.0000001, 0.9999367, 0.999935)
+bones/25/rotation = Quaternion(0.0019308126, 0.23584895, 0.97173244, -0.010370235)
+bones/26/rotation = Quaternion(-0.52136105, 0.0007582044, -0.0038286562, 0.85332733)
+bones/27/rotation = Quaternion(0.9026041, 0.0089375945, 0.019609494, 0.4299319)
+
+[node name="LookingProductPosition" type="Marker3D" parent="Kitty"]
+unique_name_in_owner = true
+transform = Transform3D(-1, -6.6317716e-15, 8.742275e-08, 0, 0.9999998, 1.4901161e-08, -8.742278e-08, 1.4901161e-08, -0.9999998, 0, 1.7, -0.031)
+
 [node name="MeshPerson" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.030626)
+visible = false
 mesh = SubResource("CapsuleMesh_sfv1e")
 
-[node name="LookingProductPosition" type="Marker3D" parent="MeshPerson"]
-unique_name_in_owner = true
-transform = Transform3D(1, 5.3290705e-15, 1.4210855e-14, 0, 0.9999998, 1.4901161e-08, 0, -1.4901161e-08, 0.9999998, 0, 1, 0.031)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31118774, 0.32763672)
+shape = SubResource("BoxShape3D_bls4j")
 
 [node name="Cart" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-shape = SubResource("ConcavePolygonShape3D_symyc")
+shape = ExtResource("3_fkugw")
 
 [node name="CenterOfMass" type="Marker3D" parent="Cart"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
-
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Cart"]
-mesh = SubResource("ArrayMesh_sglur")
-
-[node name="BoxPile" type="Node3D" parent="Cart"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3519932, 0)
 
 [node name="HandsReachArea3D" type="Area3D" parent="Cart"]
 unique_name_in_owner = true
@@ -187,7 +198,12 @@ input_ray_pickable = false
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cart/HandsReachArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35122263)
+visible = false
 shape = SubResource("SphereShape3D_symyc")
+
+[node name="Cart" parent="Cart" instance=ExtResource("3_bls4j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.051015615, 0.30758107)
 
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -208,7 +224,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9999998)
 
 [node name="DebugLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Velocity" type="Label" parent="DebugLayer"]
 unique_name_in_owner = true
@@ -220,7 +235,9 @@ label_settings = SubResource("LabelSettings_symyc")
 
 [node name="BoxDropOff" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.5148661)
 
 [connection signal="body_entered" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
 [connection signal="body_exited" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
+
+[editable path="Kitty"]

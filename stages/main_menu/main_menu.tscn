@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyj3mskldd4wg"]
+[gd_scene load_steps=8 format=3 uid="uid://cyj3mskldd4wg"]
 
+[ext_resource type="AudioStream" uid="uid://bjhw2xnhe17gr" path="res://assets/bgm/Evening lunch rush.mp3" id="1_jofpu"]
 [ext_resource type="Script" uid="uid://dxrc4vpfkepfc" path="res://stages/main_menu/label.gd" id="1_owbi8"]
+[ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_mcab4"]
 [ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/StageManager/stage_changer_base_button.gd" id="2_wxx16"]
 [ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_show.gd" id="3_wyd67"]
 [ext_resource type="PackedScene" uid="uid://dojtdweambavs" path="res://entities/menu_options/menu_options.tscn" id="4_7wn7o"]
@@ -16,6 +18,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_jofpu")
+bus = &"BGM"
+parameters/looping = true
+script = ExtResource("2_mcab4")
+metadata/_custom_type_script = "uid://mpygmma5f53t"
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -30,7 +39,7 @@ theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Template Godot"
+text = "Y So Much"
 label_settings = SubResource("LabelSettings_wyd67")
 horizontal_alignment = 1
 script = ExtResource("1_owbi8")
@@ -50,7 +59,7 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Start Game"
 script = ExtResource("2_wxx16")
-scene_file = "uid://da3gtwdmmm0dn"
+scene_file = "uid://bikle0m56vgy0"
 
 [node name="ButtonPanelShow" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("panel")]
 layout_mode = 2

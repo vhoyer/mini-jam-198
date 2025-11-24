@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjhw2xnhe17gr"
+path="res://.godot/imported/Evening lunch rush.mp3-8ace32c0c950330026f083b560a3d30e.mp3str"
+
+[deps]
+
+source_file="res://assets/bgm/Evening lunch rush.mp3"
+dest_files=["res://.godot/imported/Evening lunch rush.mp3-8ace32c0c950330026f083b560a3d30e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -4,6 +4,16 @@ extends SaveData
 ## item: { 'name': string, 'price': int, 'rarity': int }
 signal receipt_items_pushed(item: Dictionary)
 
+
+var current_department: String:
+	get():
+		## holy fucking shit, Elon musk has so much money
+		return _short_term.get_item('current_department', 'House')
+	set(value):
+		_short_term.set_item('current_department', value)
+		changed.emit('current_department')
+
+
 var selected_product: Dictionary:
 	get():
 		## holy fucking shit, Elon musk has so much money

@@ -12,6 +12,12 @@ var items_container: VBoxContainer = %Items
 @onready
 var panel_container: PanelContainer = %PanelContainer
 
+@onready
+var beep: AudioStreamPlayer = %Beep
+
+@onready
+var print_sound: AudioStreamPlayer = %Print
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +26,10 @@ func _ready() -> void:
 
 ## item: { 'name': string, 'price': int, 'rarity': int }
 func _on_receipt_item_pushed(item: Dictionary) -> void:
+	beep.play()
+	await beep.finished
+	print_sound.play()
+
 	var item_display:= _receipt_item.instantiate()
 	item_display.label = item.get('name', 'undefined')
 	item_display.price = item.get('price', 0)

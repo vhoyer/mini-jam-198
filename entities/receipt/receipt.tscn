@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://hgtbvqw7hjnr"]
+[gd_scene load_steps=8 format=3 uid="uid://hgtbvqw7hjnr"]
 
 [ext_resource type="Script" uid="uid://ja325ffcvfiq" path="res://entities/receipt/receipt.gd" id="1_q6for"]
 [ext_resource type="PackedScene" uid="uid://dhvvko25hv1n5" path="res://entities/receipt/receipt_item.tscn" id="2_s8n7j"]
 [ext_resource type="Texture2D" uid="uid://c4eoind2rfugo" path="res://entities/receipt/ymart_logo.png" id="3_q6for"]
+[ext_resource type="AudioStream" uid="uid://clc6ou34rvx4d" path="res://entities/receipt/202530__kalisemorrison__scanner-beep.ogg" id="4_pic1w"]
+[ext_resource type="AudioStream" uid="uid://tkysx6jydvn4" path="res://entities/receipt/25421__andrewweathers__receipt.wav" id="5_4vcfl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8n7j"]
 content_margin_left = 8.0
@@ -62,3 +64,15 @@ theme_override_styles/separator = SubResource("StyleBoxLine_q6for")
 [node name="Items" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Beep" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_pic1w")
+max_polyphony = 6
+bus = &"SFX"
+
+[node name="Print" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_4vcfl")
+max_polyphony = 6
+bus = &"SFX"

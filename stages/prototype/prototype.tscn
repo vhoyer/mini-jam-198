@@ -1,12 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=14 format=3 uid="uid://bikle0m56vgy0"]
 
+[ext_resource type="AudioStream" uid="uid://bjhw2xnhe17gr" path="res://assets/bgm/Evening lunch rush.mp3" id="1_3oq6v"]
 [ext_resource type="PackedScene" uid="uid://dqvxh5cs8dxxc" path="res://entities/player/player.tscn" id="1_erxa5"]
 [ext_resource type="PackedScene" uid="uid://h1x0oooetx0v" path="res://entities/phone/phone.tscn" id="1_mwv38"]
+[ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_4cw7t"]
 [ext_resource type="PackedScene" uid="uid://hgtbvqw7hjnr" path="res://entities/receipt/receipt.tscn" id="2_65t83"]
 [ext_resource type="PackedScene" uid="uid://ci03lct0nuflw" path="res://entities/shelves/shelves.tscn" id="2_ljefa"]
 [ext_resource type="PackedScene" uid="uid://b5hpc674k7ita" path="res://entities/hud_prompts/hud_prompts.tscn" id="3_65t83"]
-[ext_resource type="PackedScene" uid="uid://cxcl4sfjnsjme" path="res://assets/3D/YmartInterior.glb" id="4_ac262"]
+[ext_resource type="PackedScene" uid="uid://dibnoifmle2m4" path="res://entities/store_interior/store_interior.tscn" id="4_5la2h"]
 [ext_resource type="PackedScene" uid="uid://2ute5uskkcon" path="res://entities/light/light.tscn" id="7_8lktr"]
+[ext_resource type="PackedScene" uid="uid://5gtc0e4n0l5k" path="res://entities/cutout/cutout.tscn" id="8_5la2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erxa5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,33 +23,17 @@ background_mode = 2
 sky = SubResource("Sky_ljefa")
 tonemap_mode = 2
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bxatn"]
-
-[sub_resource type="Gradient" id="Gradient_erxa5"]
-offsets = PackedFloat32Array(0.9082569, 0.9357798)
-colors = PackedColorArray(0.88, 0.7896533, 0.6864, 1, 0.12, 0.12, 0.12, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ljefa"]
-gradient = SubResource("Gradient_erxa5")
-width = 600
-height = 600
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljefa"]
-albedo_texture = SubResource("GradientTexture2D_ljefa")
-metallic = 1.0
-metallic_specular = 0.15
-metallic_texture = SubResource("GradientTexture2D_ljefa")
-metallic_texture_channel = 4
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_ljefa"]
-size = Vector3(66, 0.1, 66)
-
 [node name="Prototype" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5kwao")
+
+[node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3oq6v")
+bus = &"BGM"
+parameters/looping = true
+script = ExtResource("2_4cw7t")
+metadata/_custom_type_script = "uid://mpygmma5f53t"
 
 [node name="Phone" parent="." instance=ExtResource("1_mwv38")]
 
@@ -54,28 +41,13 @@ size = Vector3(66, 0.1, 66)
 
 [node name="HudPrompts" parent="." instance=ExtResource("3_65t83")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_5kwao")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_bxatn")
-
-[node name="YmartInterior" parent="StaticBody3D" instance=ExtResource("4_ac262")]
-
-[node name="Ceiling" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.9999999, 8.742277e-08, 0, -8.742277e-08, -1, 0, 0, 0, 0.9999999, 0, 8, 0)
-visible = false
-material_override = SubResource("StandardMaterial3D_ljefa")
-mesh = SubResource("BoxMesh_ljefa")
-skeleton = NodePath("")
+[node name="StoreInterior" parent="." instance=ExtResource("4_5la2h")]
 
 [node name="Player" parent="." instance=ExtResource("1_erxa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062492386, 0.008121848, -0.66435146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062, 0, -0.664)
 
 [node name="Shelves" parent="." instance=ExtResource("2_ljefa")]
+section = "Investiments"
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -474,4 +446,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 24)
 [node name="Light6" parent="Node3D/Node3D6" instance=ExtResource("7_8lktr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 30)
 
-[editable path="StaticBody3D/YmartInterior"]
+[node name="Cutout" parent="." instance=ExtResource("8_5la2h")]
+transform = Transform3D(0.668404, 0, 0.74379843, 0, 1, 0, -0.74379843, 0, 0.668404, -31.381142, 0.48518518, -5.184258)

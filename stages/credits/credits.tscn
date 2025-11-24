@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3b4ogssrd1ut"]
+[gd_scene load_steps=7 format=3 uid="uid://d3b4ogssrd1ut"]
 
-[ext_resource type="Script" uid="uid://0sqebelupmb2" path="res://addons/godot-devkit/UI/ui_elements/credits_roll_v2/credits_roll.gd" id="1_erhdw"]
+[ext_resource type="Script" uid="uid://0sqebelupmb2" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_roll.gd" id="1_erhdw"]
 [ext_resource type="Script" uid="uid://cfncexcper2ti" path="res://stages/credits/credits.gd" id="1_ufutd"]
+[ext_resource type="AudioStream" uid="uid://bjhw2xnhe17gr" path="res://assets/bgm/Evening lunch rush.mp3" id="2_71y72"]
+[ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="3_y37aw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_erhdw"]
 font_size = 32
@@ -22,6 +24,13 @@ grow_vertical = 2
 script = ExtResource("1_ufutd")
 next_scene = "uid://cyj3mskldd4wg"
 
+[node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_71y72")
+bus = &"BGM"
+parameters/looping = true
+script = ExtResource("3_y37aw")
+metadata/_custom_type_script = "uid://mpygmma5f53t"
+
 [node name="CreditsRoll" type="ScrollContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -33,15 +42,15 @@ grow_vertical = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 script = ExtResource("1_erhdw")
-preview_margin = 300
+preview_margin = -315
 metadata/_custom_type_script = "uid://0sqebelupmb2"
 
 [node name="ScrollingMargin" type="MarginContainer" parent="CreditsRoll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_top = 300
-theme_override_constants/margin_bottom = 300
+theme_override_constants/margin_top = -315
+theme_override_constants/margin_bottom = -315
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin"]
 layout_mode = 2
@@ -63,6 +72,64 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 16
 
+[node name="Person4" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "hikedan.itchi.io"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person4"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxLine_ufutd")
+
+[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person4/Roles"]
+layout_mode = 2
+text = "3D Character Modeling"
+
+[node name="Label3" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person4/Roles"]
+layout_mode = 2
+text = "3D Animations"
+
+[node name="Person" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "vhoyer"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxLine_ufutd")
+
+[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person/Roles"]
+layout_mode = 2
+text = "Game Designer"
+
+[node name="Label3" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person/Roles"]
+layout_mode = 2
+text = "Lead Programmer"
+
+[node name="Label4" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person/Roles"]
+layout_mode = 2
+text = "Sound Designer"
+
 [node name="Person2" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer"]
 layout_mode = 2
 
@@ -70,7 +137,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-text = "pemmy0"
+text = "pemmyart"
 horizontal_alignment = 2
 
 [node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person2"]
@@ -90,9 +157,9 @@ text = "Concept Artist"
 layout_mode = 2
 text = "2D Artist"
 
-[node name="Label3" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person2/Roles"]
+[node name="Label4" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person2/Roles"]
 layout_mode = 2
-text = "Animator"
+text = "3D Modeling"
 
 [node name="Person3" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer"]
 layout_mode = 2
@@ -101,7 +168,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-text = "theguitarassassin"
+text = "Infymouse"
 horizontal_alignment = 2
 
 [node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person3"]
@@ -115,46 +182,7 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person3/Roles"]
 layout_mode = 2
-text = "Composer"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person3/Roles"]
-layout_mode = 2
-text = "Sound Designer"
-
-[node name="Label3" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person3/Roles"]
-layout_mode = 2
-text = "Level Designer"
-
-[node name="Person" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "Vinícius Hoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person"]
-layout_mode = 2
-theme_override_constants/separation = 32
-theme_override_styles/separator = SubResource("StyleBoxLine_ufutd")
-
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person/Roles"]
-layout_mode = 2
-text = "Game Designer"
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person/Roles"]
-layout_mode = 2
-text = "UX Designer"
-
-[node name="Label3" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionTeam/VBoxContainer/Person/Roles"]
-layout_mode = 2
-text = "Lead Programmer"
+text = "Song: Evening Lunch Rush"
 
 [node name="SectionCCAttribuition" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer"]
 layout_mode = 2
@@ -169,52 +197,6 @@ horizontal_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition"]
 layout_mode = 2
 theme_override_constants/separation = 16
-
-[node name="Person3" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person3"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "Daniel de Oliveira"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person3"]
-layout_mode = 2
-theme_override_constants/separation = 32
-theme_override_styles/separator = SubResource("StyleBoxLine_ufutd")
-
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person3"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person3/Roles"]
-layout_mode = 2
-text = "Eye Dropper Palette Swapper Shader"
-
-[node name="Person5" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "Nathan Hoad"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5"]
-layout_mode = 2
-theme_override_constants/separation = 32
-theme_override_styles/separator = SubResource("StyleBoxLine_ufutd")
-
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5/Roles"]
-layout_mode = 2
-text = "godot dialogue manager"
 
 [node name="Person6" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer"]
 layout_mode = 2
@@ -262,6 +244,31 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "Universal Transition Shader"
 
+[node name="Person5" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "andrewweathers"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxLine_ufutd")
+
+[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person5/Roles"]
+layout_mode = 2
+text = "Receipt.wav
+https://freesound.org/s/25421/
+License: Attribution NonCommercial 3.0"
+
 [node name="Person7" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer"]
 layout_mode = 2
 
@@ -269,7 +276,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-text = "jitspoe"
+text = "Twiggie2000"
 horizontal_alignment = 2
 
 [node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person7"]
@@ -283,7 +290,9 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionCCAttribuition/VBoxContainer/Person7/Roles"]
 layout_mode = 2
-text = "godot-console"
+text = "Cart moving
+https://freesound.org/s/366131/
+License: Attribution NonCommercial 3.0"
 
 [node name="SectionSpecialThanks" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer"]
 layout_mode = 2
@@ -311,37 +320,13 @@ text = "Godot Foundation"
 layout_mode = 2
 text = "Asesprite"
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
+[node name="Label11" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
 layout_mode = 2
-text = "Pemmy's mom"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
-layout_mode = 2
-text = "GMTK"
-
-[node name="Label4" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
-layout_mode = 2
-text = "Joe Mama"
-
-[node name="Label5" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
-layout_mode = 2
-text = "Guitar's Friend who plays synth so good"
-
-[node name="Label6" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
-layout_mode = 2
-text = "Your sister"
+text = "Blender"
 
 [node name="Label7" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
 layout_mode = 2
 text = "All of the people subscribed"
-
-[node name="Label8" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
-layout_mode = 2
-text = "My dog"
-
-[node name="Label9" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks/List"]
-layout_mode = 2
-text = "Titan"
 
 [node name="Label3" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/SectionSpecialThanks"]
 layout_mode = 2

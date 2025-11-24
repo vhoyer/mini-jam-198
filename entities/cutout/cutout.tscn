@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://5gtc0e4n0l5k"]
+
+[ext_resource type="PackedScene" uid="uid://bruckbpg383pp" path="res://entities/cutout/assets/eloncutout.glb" id="1_cahy4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2blyt"]
+points = PackedVector3Array(-0.13409169, 0.48518518, 0.4678899, -0.13409169, 0.48518518, -0.4678899, -0.1583798, 0.4784412, 0.4678899, 0.13314797, -0.4785362, 0.4678899, -0.1583798, 0.4784412, -0.4678899, 0.13311277, -0.4785362, -0.4678899, -0.22645693, -0.4792961, 0.048547685, 0.10885985, -0.48518518, 0.4678899, 0.10885985, -0.48518518, -0.4678899, -0.22645693, -0.4792961, -0.037555784)
+
+[node name="Cutout" type="RigidBody3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_2blyt")
+
+[node name="eloncutout" parent="." instance=ExtResource("1_cahy4")]
+
+[editable path="eloncutout"]

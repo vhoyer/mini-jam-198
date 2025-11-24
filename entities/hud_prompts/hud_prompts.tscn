@@ -70,3 +70,35 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_70tw1")
+
+[node name="MembershipProgress" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 297.0
+offset_top = -32.0
+offset_right = -297.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MembershipProgress"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MembershipProgress/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MembershipProgress/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy more to unlock next department"
+
+[node name="Label2" type="Label" parent="MembershipProgress/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "current: %s"
+
+[node name="ProgressBar" type="ProgressBar" parent="MembershipProgress/VBoxContainer"]
+layout_mode = 2

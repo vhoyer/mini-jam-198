@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://2ute5uskkcon"]
 
-[ext_resource type="PackedScene" uid="uid://dscjusbtujld0" path="res://assets/3D/fluorecent_light.glb" id="1_mkifa"]
+[ext_resource type="PackedScene" uid="uid://dscjusbtujld0" path="res://entities/light/fluorecent_light.glb" id="1_mkifa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qas6"]
 albedo_color = Color(0, 0, 0, 1)
@@ -26,7 +26,4 @@ mesh = SubResource("ArrayMesh_mkifa")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-light_energy = 5.0
-light_volumetric_fog_energy = 5.0
-spot_range = 10.0
-spot_angle = 79.694756
+light_energy = 2.5
