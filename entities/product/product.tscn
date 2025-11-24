@@ -1,16 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmqv488a460ao"]
+[gd_scene load_steps=8 format=3 uid="uid://dmqv488a460ao"]
 
 [ext_resource type="Script" uid="uid://c0lpdpm0fc2l" path="res://entities/product/product.gd" id="1_eg8l8"]
 [ext_resource type="Material" uid="uid://hn6q8ca38b2k" path="res://assets/materials/highlight_material.tres" id="2_04ii2"]
 [ext_resource type="PackedScene" uid="uid://covbcvofw1nip" path="res://entities/product/models/default_box.glb" id="2_sf8nj"]
 [ext_resource type="PackedScene" uid="uid://d2b8cyu2ula5e" path="res://entities/product/models/common_box.glb" id="3_sim54"]
 [ext_resource type="PackedScene" uid="uid://dtwgqp063ik6a" path="res://entities/product/models/fancy_box.glb" id="4_i7akn"]
+[ext_resource type="AudioStream" uid="uid://mqt7j6vnf3gl" path="res://assets/sfx/cardbox_bump/cardboard_bump.tres" id="6_04ii2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gn0ls"]
 size = Vector3(0.55, 0.55, 0.55)
 
 [node name="Product" type="RigidBody3D"]
 collision_layer = 3
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_eg8l8")
 price = 0
 _highlight_material = ExtResource("2_04ii2")
@@ -41,3 +44,9 @@ text = "$0"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_gn0ls")
+
+[node name="Bump" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_04ii2")
+max_polyphony = 2
+bus = &"SFX"

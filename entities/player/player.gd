@@ -32,6 +32,9 @@ var kitty: Node3D = %Kitty
 @onready
 var bump: AudioStreamPlayer3D = %Bump
 
+@onready
+var wheels: AudioStreamPlayer3D = %Wheels
+
 
 @onready
 var _hands_reach_area: Area3D = %HandsReachArea3D
@@ -75,8 +78,10 @@ func _physics_process(delta: float) -> void:
 	steering = move_toward(steering, Input.get_axis('right', 'left') * MAX_STEER, delta * 2.5)
 	engine_force = Input.get_axis('backward', 'forward') * ENGINE_POWER
 
+	var velocity = self.linear_velocity.length()
+
 	## animation logic
-	kitty_animation_player.speed_scale = (self.linear_velocity.length() * 0.1)
+	kitty_animation_player.speed_scale = (velocity * 0.1)
 
 	## sound playing logic
 	var colliding_bodies:= self.get_colliding_bodies()
@@ -86,6 +91,8 @@ func _physics_process(delta: float) -> void:
 			_recent_collisions.push_back(body)
 	_recent_collisions = _recent_collisions.filter(func(body:Node3D):
 		return colliding_bodies.has(body))
+
+	wheels.volume_linear = (velocity) * 0.1
 
 	## product logic stuff
 	if _products_in_range.size() <= 0:

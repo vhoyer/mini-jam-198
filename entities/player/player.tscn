@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqvxh5cs8dxxc"]
+[gd_scene load_steps=18 format=3 uid="uid://dqvxh5cs8dxxc"]
 
 [ext_resource type="Script" uid="uid://co5fbfk4p7661" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://b6ryvxcjxrs4n" path="res://entities/player/models/Kitty.glb" id="2_sglur"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shape3D" uid="uid://c58mdn40nckky" path="res://entities/player/models/cart_concave_shape.tres" id="3_fkugw"]
 [ext_resource type="AudioStream" uid="uid://dpxgfoosdlp7g" path="res://entities/player/sfx/cart_bump/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday1.ogg" id="5_8fjmc"]
 [ext_resource type="AudioStream" uid="uid://b7nsfup5hgjvp" path="res://entities/player/sfx/cart_bump/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday2.ogg" id="6_qiwj3"]
+[ext_resource type="AudioStream" uid="uid://go13o42jkj1w" path="res://entities/player/sfx/cart_moving/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday.ogg" id="7_qiwj3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symyc"]
 albedo_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
@@ -259,6 +260,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34995282, 0.5359477)
 stream = SubResource("AudioStreamRandomizer_26q78")
 max_polyphony = 6
 bus = &"Cart"
+
+[node name="Wheels" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34995282, 0.5359477)
+stream = ExtResource("7_qiwj3")
+autoplay = true
+max_polyphony = 6
+bus = &"SFX"
 
 [connection signal="body_entered" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
 [connection signal="body_exited" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]

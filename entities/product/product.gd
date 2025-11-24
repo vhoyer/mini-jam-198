@@ -58,6 +58,9 @@ var price_label: Label3D = %Price
 @onready
 var box_model_placement: Marker3D = %BoxModelPlacement
 
+@onready
+var bump: AudioStreamPlayer3D = %Bump
+
 
 var product_dict: Dictionary:
 	set(value):
@@ -106,6 +109,19 @@ func _update_view() -> void:
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	_set_hightlight_shader()
+
+
+var _recent_collisions: Array = []
+
+func _physics_process(_delta: float) -> void:
+	var colliding_bodies:= self.get_colliding_bodies()
+	for body: Node3D in colliding_bodies:
+		if not _recent_collisions.has(body):
+			bump.volume_linear = remap(clamp(self.linear_velocity.length_squared(), 0, 1), 0, 2, 0, 0.3)
+			bump.play()
+			_recent_collisions.push_back(body)
+	_recent_collisions = _recent_collisions.filter(func(body:Node3D):
+		return colliding_bodies.has(body))
 
 
 func _set_hightlight_shader() -> void:
