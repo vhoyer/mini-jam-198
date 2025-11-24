@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bikle0m56vgy0"]
+[gd_scene load_steps=15 format=3 uid="uid://bikle0m56vgy0"]
 
 [ext_resource type="AudioStream" uid="uid://bjhw2xnhe17gr" path="res://assets/bgm/Evening lunch rush.mp3" id="1_3oq6v"]
+[ext_resource type="Script" uid="uid://cbq4px2t2oh2l" path="res://stages/prototype/prototype.gd" id="1_4cw7t"]
 [ext_resource type="PackedScene" uid="uid://dqvxh5cs8dxxc" path="res://entities/player/player.tscn" id="1_erxa5"]
 [ext_resource type="PackedScene" uid="uid://h1x0oooetx0v" path="res://entities/phone/phone.tscn" id="1_mwv38"]
 [ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_4cw7t"]
@@ -24,6 +25,7 @@ sky = SubResource("Sky_ljefa")
 tonemap_mode = 2
 
 [node name="Prototype" type="Node"]
+script = ExtResource("1_4cw7t")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5kwao")

@@ -20,6 +20,8 @@ func _ready() -> void:
 func _on_save_data_changed(what: String) -> void:
 	if not what or what == 'balance':
 		progress.value = data.spent
+		if data.spent >= data.current_limit:
+			data.next_department()
 	if not what or what == 'current_limit':
 		progress.max_value = data.current_limit
 	if not what or what == 'current_department':
