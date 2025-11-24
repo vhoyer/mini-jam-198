@@ -28,6 +28,10 @@ var _box_drop_off: Marker3D = %BoxDropOff
 
 
 @onready
+var bump: AudioStreamPlayer3D = %Bump
+
+
+@onready
 var _hands_reach_area: Area3D = %HandsReachArea3D
 
 
@@ -48,6 +52,9 @@ var _hand_pos: Vector3:
 	get(): return _hands_reach_area.global_position
 
 
+var _recent_collisions: Array = []
+
+
 func _ready() -> void:
 	center_of_mass = _center_of_mass_marker.position
 
@@ -60,6 +67,15 @@ func _physics_process(delta: float) -> void:
 	## car move stuff
 	steering = move_toward(steering, Input.get_axis('right', 'left') * MAX_STEER, delta * 2.5)
 	engine_force = Input.get_axis('backward', 'forward') * ENGINE_POWER
+
+	## sound playing logic
+	var colliding_bodies:= self.get_colliding_bodies()
+	for body: Node3D in colliding_bodies:
+		if not _recent_collisions.has(body):
+			bump.play()
+			_recent_collisions.push_back(body)
+	_recent_collisions = _recent_collisions.filter(func(body:Node3D):
+		return colliding_bodies.has(body))
 
 	## product logic stuff
 	if _products_in_range.size() <= 0:

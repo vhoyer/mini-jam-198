@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dqvxh5cs8dxxc"]
+[gd_scene load_steps=17 format=3 uid="uid://dqvxh5cs8dxxc"]
 
 [ext_resource type="Script" uid="uid://co5fbfk4p7661" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://b6ryvxcjxrs4n" path="res://entities/player/models/Kitty.glb" id="2_sglur"]
 [ext_resource type="PackedScene" uid="uid://xu0iswyhaefc" path="res://entities/player/models/Cart.glb" id="3_bls4j"]
 [ext_resource type="Shape3D" uid="uid://c58mdn40nckky" path="res://entities/player/models/cart_concave_shape.tres" id="3_fkugw"]
+[ext_resource type="AudioStream" uid="uid://dpxgfoosdlp7g" path="res://entities/player/sfx/cart_bump/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday1.ogg" id="5_8fjmc"]
+[ext_resource type="AudioStream" uid="uid://b7nsfup5hgjvp" path="res://entities/player/sfx/cart_bump/721549__inmotionaudio__objwhled_teatrolley02_inmotionaudio_freesamplesunday2.ogg" id="6_qiwj3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symyc"]
 albedo_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
@@ -42,10 +44,18 @@ font_size = 32
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_26q78"]
+random_pitch = 1.08
+streams_count = 2
+stream_0/stream = ExtResource("5_8fjmc")
+stream_1/stream = ExtResource("6_qiwj3")
+
 [node name="Player" type="VehicleBody3D"]
 mass = 100.0
 gravity_scale = 3.0
 center_of_mass_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
 linear_damp = 0.25
 angular_damp = 0.8
 script = ExtResource("1_symyc")
@@ -148,25 +158,28 @@ skeleton = NodePath("../../../WheelFrontRight")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.031)
 
 [node name="Skeleton3D" parent="Kitty/Armature" index="0"]
-bones/0/position = Vector3(-1.2764779e-15, 0.16544999, 0.023903767)
+bones/0/position = Vector3(3.5597633e-10, 0.1779069, 0.023903767)
 bones/0/rotation = Quaternion(7.5339734e-09, 0.99500847, -0.099790506, -7.512105e-08)
-bones/10/rotation = Quaternion(0.50781244, 0.12254691, 0.35552454, 0.7750555)
-bones/13/rotation = Quaternion(0.5509854, -0.14089794, -0.3272658, 0.75462574)
-bones/15/rotation = Quaternion(-0.0019309488, 0.23584895, 0.9717325, 0.010370217)
-bones/16/rotation = Quaternion(-0.52136093, -0.0007581602, 0.0038286038, 0.8533273)
-bones/17/rotation = Quaternion(0.9026041, -0.008937607, -0.019609487, 0.42993185)
-bones/18/rotation = Quaternion(-0.52841187, -6.4096824e-08, -3.989399e-08, 0.84898823)
-bones/19/rotation = Quaternion(0.3763472, 9.947598e-14, -1.044928e-13, 0.92647874)
-bones/20/rotation = Quaternion(0.11594801, -3.1086236e-15, -5.9679467e-17, 0.9932553)
-bones/20/scale = Vector3(0.9999993, 0.9999997, 0.99999976)
-bones/21/rotation = Quaternion(-0.2317172, 3.7303494e-14, -2.0427477e-14, 0.97278327)
-bones/22/rotation = Quaternion(-0.2610659, 6.17284e-13, 9.0916163e-13, 0.965321)
-bones/22/scale = Vector3(0.9999377, 0.9999445, 0.9999935)
-bones/23/rotation = Quaternion(-9.423082e-08, 0.90865, -0.41755882, 2.8538935e-07)
-bones/23/scale = Vector3(1.0000001, 0.9999367, 0.999935)
-bones/25/rotation = Quaternion(0.0019308126, 0.23584895, 0.97173244, -0.010370235)
-bones/26/rotation = Quaternion(-0.52136105, 0.0007582044, -0.0038286562, 0.85332733)
-bones/27/rotation = Quaternion(0.9026041, 0.0089375945, 0.019609494, 0.4299319)
+bones/2/rotation = Quaternion(0.10071394, 3.162492e-08, -1.2006042e-08, 0.9949154)
+bones/3/rotation = Quaternion(-0.091511875, 5.6189214e-07, -4.363625e-08, 0.9958041)
+bones/10/rotation = Quaternion(0.5028261, 0.10975817, 0.36536074, 0.7756486)
+bones/11/rotation = Quaternion(0.10195435, -0.0021906358, -0.022123413, 0.99454063)
+bones/13/rotation = Quaternion(0.53945214, -0.09004583, -0.35189754, 0.759639)
+bones/14/rotation = Quaternion(0.10195432, 0.002190629, 0.02212341, 0.99454063)
+bones/15/rotation = Quaternion(-0.0023459413, 0.16983873, 0.9854281, 0.008994448)
+bones/16/rotation = Quaternion(-0.38418585, -0.0008202865, 0.0028212622, 0.9232511)
+bones/17/rotation = Quaternion(0.86198115, -0.0101245595, -0.019257205, 0.5064732)
+bones/18/rotation = Quaternion(-0.62916744, -0.007078943, -0.00812796, 0.77719504)
+bones/18/scale = Vector3(0.99999964, 0.99999964, 0.99999994)
+bones/19/rotation = Quaternion(0.37935752, -0.00013247902, 0.00032660566, 0.9252502)
+bones/19/scale = Vector3(1.0000002, 1.0000001, 1)
+bones/20/rotation = Quaternion(0.12588824, -8.132267e-05, 0.00069904834, 0.99204427)
+bones/21/rotation = Quaternion(-0.20596519, 0.00041609514, 0.0017363272, 0.97855777)
+bones/22/rotation = Quaternion(-0.21563232, 0.0010716022, 0.0038760062, 0.9764664)
+bones/23/rotation = Quaternion(-0.0048099626, 0.9218884, -0.38741916, -0.0022507384)
+bones/25/rotation = Quaternion(0.0023458055, 0.16983876, 0.9854281, -0.008994471)
+bones/26/rotation = Quaternion(-0.38418597, 0.0008203344, -0.002821301, 0.9232511)
+bones/27/rotation = Quaternion(0.8619813, 0.010124536, 0.019257208, 0.5064731)
 
 [node name="LookingProductPosition" type="Marker3D" parent="Kitty"]
 unique_name_in_owner = true
@@ -224,6 +237,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9999998)
 
 [node name="DebugLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Velocity" type="Label" parent="DebugLayer"]
 unique_name_in_owner = true
@@ -236,6 +250,13 @@ label_settings = SubResource("LabelSettings_symyc")
 [node name="BoxDropOff" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.5148661)
+
+[node name="Bump" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34995282, 0.5359477)
+stream = SubResource("AudioStreamRandomizer_26q78")
+max_polyphony = 6
+bus = &"Cart"
 
 [connection signal="body_entered" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
 [connection signal="body_exited" from="Cart/HandsReachArea3D" to="." method="_on_hands_reach_area_3d_body_entered_or_exited"]
